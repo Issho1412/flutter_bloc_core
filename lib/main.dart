@@ -2,16 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:src_core_bloc/core/base/base_state.dart';
+import 'package:src_core_bloc/core/bloc_observer.dart';
 import 'package:src_core_bloc/core/config/theme/basic_theme.dart';
 import 'package:src_core_bloc/features/counter/bloc/counter_bloc.dart';
 import 'package:src_core_bloc/features/counter/bloc/counter_event.dart';
+import 'package:src_core_bloc/pages/memes/index.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   // await Firebase.initializeApp();
   SystemChrome.setPreferredOrientations(
-      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
-  runApp(const MyApp());
+      [DeviceOrientation.landscapeRight, DeviceOrientation.landscapeLeft]);
+  BlocOverrides.runZoned(() {
+      runApp(const MyApp());
+    },
+    blocObserver: CustomBlocObserver() 
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -23,7 +29,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: theme(),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MemePage(),
     );
   }
 }

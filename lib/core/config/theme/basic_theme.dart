@@ -1,5 +1,4 @@
-import 'package:src_core_bloc/data/const.dart';
-
+import 'package:src_core_bloc/core/const.dart';
 import '../../util/colors.dart';
 import 'package:flutter/material.dart';
 
