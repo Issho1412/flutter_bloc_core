@@ -6,12 +6,12 @@ import 'package:src_core_bloc/data/models/meme/meme.dart';
 import '../../../core/util/enum.dart';
 
 abstract class IMemeRemoteDataSource {
-  Future<MemeModel> getMemes();
+  Future<List<MemeModel>> getMemes();
 }
 
 class MemeRemoteDataSource extends IMemeRemoteDataSource {
   @override
-  Future<MemeModel> getMemes() {
+  Future<List<MemeModel>> getMemes() {
     return handleRemoteRequest(() async {
       final response = await Helper().call(DioParams(
           HttpMethod.GET, 
@@ -19,7 +19,9 @@ class MemeRemoteDataSource extends IMemeRemoteDataSource {
           needAuthrorize: false
         )
       );
-      return MemeModel.fromJson(response['data']);
+      return (response['data']['memes'] as List<dynamic>)
+          .map((e) => MemeModel.fromJson(e as Map<String, dynamic>))
+          .toList();
     });
   }
 }
