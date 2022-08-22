@@ -1,5 +1,6 @@
 import 'package:src_core_bloc/pages/memes/index.dart';
 import 'package:flutter/material.dart';
+import 'package:src_core_bloc/pages/splash/splash_page.dart';
 import 'core/config/create_page_route.dart';
 
 class RouteList {
@@ -9,6 +10,7 @@ class RouteList {
 
     switch (settings.name) {
       case memeRoute: return createRoute(const MemePage());
+      case splashRoute: return createRoute(const SplashPage());
       default:
         return MaterialPageRoute(builder: (_) => Scaffold(body: Center(child: Text('${settings.name}'))));
     }

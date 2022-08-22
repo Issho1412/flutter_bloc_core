@@ -41,10 +41,7 @@ class LoadConfigEvent extends BaseEvent {
 }
 
 class UpdateDataEvent extends BaseEvent {
-  final dynamic param;
-  UpdateDataEvent({this.param});
-  @override
-  List<dynamic> get props => [param];
+  UpdateDataEvent();
   @override
   String toString() => 'UpdateDataEvent';
 }

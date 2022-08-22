@@ -29,6 +29,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  auto_size_text: ^3.0.0
   cached_network_image: ^2.5.1
   connectivity_plus: ^2.2.1
   
@@ -45,6 +46,9 @@ dependencies:
   file_picker: ^4.2.5
   # Save assets to gallery
   gallery_saver: ^2.2.0
+  # Service locator
+  get: ^4.6.1
+  get_it: ^7.2.0
 
   http: ^0.13.4
   # Format date

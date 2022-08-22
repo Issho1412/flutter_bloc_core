@@ -14,8 +14,12 @@ const kTextColor = Color(0xFF757575);
 const kTextHeadline6 = Color(0xFF8B8B8B);
 const kColorSLight = Color(0xFFF5F6F9);
 const kColorCategoryCard = Color(0xFF343434);
+const kColorDotOpacity = Color(0xFFD8D8D8);
 
 const kTxtInfo = Color(0xFF3795F1);
+const kTxtDanger = Colors.red;
+
+const kDarkBlue = Color(0xFF01249D);
 
 const kAnimationDuration = Duration(milliseconds: 200);
 
