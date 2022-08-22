@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../config/size_config.dart';
 
 // ------ Color List ------ //
-const kPrimaryColor = Color(0xFFFF7643);  // Main color 
+const kPrimaryColor = Color(0xFFFF7643); // Main color
 const kPrimaryLightColor = Color(0xFFFFECDF);
 const kPrimaryGradientColor = LinearGradient(
   begin: Alignment.topLeft,
@@ -14,6 +14,8 @@ const kTextColor = Color(0xFF757575);
 const kTextHeadline6 = Color(0xFF8B8B8B);
 const kColorSLight = Color(0xFFF5F6F9);
 const kColorCategoryCard = Color(0xFF343434);
+
+const kTxtInfo = Color(0xFF3795F1);
 
 const kAnimationDuration = Duration(milliseconds: 200);
 

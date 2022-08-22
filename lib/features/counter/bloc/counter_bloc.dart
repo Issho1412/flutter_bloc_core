@@ -1,5 +1,4 @@
 import 'dart:developer';
-
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../core/base/base_state.dart';
 import 'counter_event.dart';
@@ -21,6 +20,6 @@ class CounterBloc extends Bloc<CounterEvent, BaseState> {
 
   void increaseValue() {
     value++;
-    log('value $value');
+    log('value increases to $value');
   }
 }

@@ -4,9 +4,11 @@ import 'package:src_core_bloc/core/util/colors.dart';
 class LoadingWidget extends StatelessWidget {
   const LoadingWidget({
     Key? key, 
+    this.color,
     this.strokeWidth, 
-    this.padding
+    this.padding,
   }) : super(key: key);
+  final Color? color;
   final double? strokeWidth;
   final EdgeInsets? padding;
 
@@ -16,7 +18,7 @@ class LoadingWidget extends StatelessWidget {
       padding: padding ?? const EdgeInsets.all(0.0),
       child: Center(
         child: CircularProgressIndicator(
-          color: kPrimaryColor,
+          color: color ?? kPrimaryColor,
           strokeWidth: strokeWidth ?? 10,
         ),
       ),

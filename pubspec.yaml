@@ -35,6 +35,7 @@ dependencies:
   dartz: ^0.10.1
   device_info: ^2.0.2
   dio: ^4.0.6
+  dropdown_button2: ^1.2.3
   # Value equality
   equatable: ^2.0.3
   # Bloc for state management
