@@ -1,3 +1,4 @@
+import 'package:src_core_bloc/pages/extras/trim_video_page.dart';
 import 'package:src_core_bloc/pages/memes/index.dart';
 import 'package:flutter/material.dart';
 import 'package:src_core_bloc/pages/splash/splash_page.dart';
@@ -11,6 +12,7 @@ class RouteList {
     switch (settings.name) {
       case memeRoute: return createRoute(const MemePage());
       case splashRoute: return createRoute(const SplashPage());
+      case trimvideoRoute: return createRoute(TrimVideoPage(data: data));
       default:
         return MaterialPageRoute(builder: (_) => Scaffold(body: Center(child: Text('${settings.name}'))));
     }

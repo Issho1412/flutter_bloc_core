@@ -3,11 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:src_core_bloc/core/base/base_state.dart';
 import 'package:src_core_bloc/features/splash/bloc/splash_bloc.dart';
-import 'package:src_core_bloc/routes.dart';
 import 'package:src_core_bloc/widgets/custom_button.dart';
 import '../../../core/config/size_config.dart';
-import '../../../core/routes/locator.dart';
-import '../../../core/routes/navigate_service.dart';
 import '../../../core/util/colors.dart';
 import '../../../data/demo_data.dart';
 import 'splash_item.dart';
@@ -20,7 +17,6 @@ class Body extends StatefulWidget {
 
 class _BodyState extends State<Body> {
   final SplashBloc _splashBloc = SplashBloc();
-  final NavigationService _navigationService = locator<NavigationService>(); 
   
   AnimatedContainer buildDot({int index = 0}) {
     return AnimatedContainer(
@@ -77,10 +73,7 @@ class _BodyState extends State<Body> {
                     const Spacer(),
                     CustomButton(
                       bgColor: kPrimaryColor,
-                      text: sBtnContinue, onTap: (){
-                        // Helper().directView(context, loginRoute);
-                        _navigationService.navigateTo(memeRoute);
-                      }
+                      text: sBtnContinue, onTap: _splashBloc.onDirectToHome
                     ),
                     const Spacer()
                   ],
