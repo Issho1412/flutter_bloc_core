@@ -11,9 +11,26 @@ class WebviewBloc extends Bloc<BaseEvent, BaseState> {
   double progress = 0;
   late InAppWebViewController webViewController;
   late PullToRefreshController pullToRefreshController;
+  InAppWebViewGroupOptions options = InAppWebViewGroupOptions(
+      crossPlatform: InAppWebViewOptions(
+        useShouldOverrideUrlLoading: true,
+        mediaPlaybackRequiresUserGesture: false,
+      ),
+      android: AndroidInAppWebViewOptions(
+        useHybridComposition: true,
+      ),
+      ios: IOSInAppWebViewOptions(
+        allowsInlineMediaPlayback: true,
+      ));
 
   WebviewBloc() : super(const InitialState()) {
     on<InitDataEvent>((event, emit) {
+      emit(DataLoadingState());
+      initPullRefresh();
+      emit(const DataLoadedState());
+    });
+
+    on<UpdateDataEvent>((event, emit) {
       emit(DataLoadingState());
       emit(const DataLoadedState());
     });
@@ -57,6 +74,13 @@ class WebviewBloc extends Bloc<BaseEvent, BaseState> {
   }
 
   void onProgressChanged(InAppWebViewController controller, int mprogress) {
+    if (mprogress == 100) {
+      pullToRefreshController.endRefreshing();
+    }
     progress = mprogress / 100;
+    if (progress == 1.0) {
+      add(UpdateDataEvent());
+    }
+    log('progress: $progress');
   }
 }

@@ -27,6 +27,6 @@ class SplashBloc extends Bloc<BaseEvent, BaseState> {
   }
 
   void onDirectToHome() {
-    _navigationService.navigateTo(memeRoute);
+    _navigationService.navigateTo(webviewRoute);
   }
 }

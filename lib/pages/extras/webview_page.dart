@@ -33,6 +33,7 @@ class _WebviewPageState extends State<WebviewPage> {
               children: [
                 InAppWebView(
                   initialUrlRequest: URLRequest(url: Uri.parse( _webviewBloc.currentUrl,)),
+                  initialOptions: _webviewBloc.options,
                   onWebViewCreated: _webviewBloc.onWebViewCreated,
                   onLoadStop: _webviewBloc.onLoadStop,
                   onLoadStart: _webviewBloc.onLoadStart,
@@ -40,9 +41,9 @@ class _WebviewPageState extends State<WebviewPage> {
                   pullToRefreshController: _webviewBloc.pullToRefreshController,
                 ),
                 Align(
-                  alignment: Alignment.center,
+                  alignment: Alignment.topCenter,
                   child: _webviewBloc.progress < 1.0 
-                    ? CircularProgressIndicator(value: _webviewBloc.progress,)
+                    ? LinearProgressIndicator(value: _webviewBloc.progress,)
                     : const SizedBox()
                 ),
               ]
