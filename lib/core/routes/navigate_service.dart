@@ -1,17 +1,15 @@
-
 import 'package:flutter/cupertino.dart';
 
 class NavigationService {
   final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
-  Future<dynamic> navigateTo(String routeName) {
-    return navigatorKey.currentState!.pushNamed(routeName);
+  Future<dynamic> navigateTo(String routeName, {dynamic args}) {
+    return navigatorKey.currentState!.pushNamed(routeName, arguments: args);
   }
 
-  Future<dynamic> navigateReplaceTo(String routeName) {
-    return navigatorKey.currentState!.pushReplacementNamed(routeName);
+  Future<dynamic> navigateReplaceTo(String routeName, {dynamic args}) {
+    return navigatorKey.currentState!.pushReplacementNamed(routeName, arguments: args);
   }
-
 
   void goBack() {
     return navigatorKey.currentState!.pop();

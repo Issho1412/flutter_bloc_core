@@ -5,7 +5,7 @@ import '../widgets/custom_text.dart';
 class BasicLayout extends StatelessWidget {
   final String? titleAppBar;
   final Widget? body;
-  final Widget floatButton;
+  final Widget? floatButton;
   final bool showAppBar;
   final bool showLeading;
 
@@ -13,7 +13,7 @@ class BasicLayout extends StatelessWidget {
     Key? key,
     this.titleAppBar,
     this.body,
-    required this.floatButton,
+    this.floatButton,
     this.showAppBar = true,
     this.showLeading = false,
   }): super(key: key);
@@ -28,7 +28,7 @@ class BasicLayout extends StatelessWidget {
         backgroundColor: kPrimaryColor,
       ),
       body: body ?? Container(),
-      floatingActionButton: floatButton,
+      floatingActionButton: floatButton ?? null,
     );
   }
 }

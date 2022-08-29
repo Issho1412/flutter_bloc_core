@@ -9,13 +9,12 @@ class CustomInput extends StatelessWidget {
   final double? radiusPx;
   final TextInputType? type;
   final Icon? preIcon;
-  final Function(String val)? onChanged;
+  // final Function(String val)? onChanged;
 
   const CustomInput({
     Key? key,
     required this.controller,
     this.placeHolder,
-    this.onChanged,
     this.type,
     this.labelTxt,
     this.radiusPx,
@@ -27,14 +26,14 @@ class CustomInput extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       // validator: (value){
-      //   if(value.isEmpty){
+      //   if(value?.isEmpty ?? false){
       //     return '';
       //   }
       //   return null;
       // },
+      controller: controller,
       keyboardType: type ?? TextInputType.text,
       obscureText: isHint ?? false,
-      onChanged: onChanged ?? (String val){},
       decoration: InputDecoration(
         hintText: placeHolder ?? '',
         labelText: labelTxt ?? '',

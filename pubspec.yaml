@@ -3,7 +3,7 @@ description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -32,7 +32,7 @@ dependencies:
   auto_size_text: ^3.0.0
   cached_network_image: ^2.5.1
   connectivity_plus: ^2.2.1
-  
+
   dartz: ^0.10.1
   device_info: ^2.0.2
   dio: ^4.0.6
@@ -42,6 +42,7 @@ dependencies:
   # Bloc for state management
   flutter_bloc: ^8.0.1
   flutter_inappwebview: ^5.4.3+4
+  flutter_svg: any
   fluttertoast: ^8.0.9
   file_picker: ^4.2.5
   # Save assets to gallery
@@ -83,17 +84,16 @@ dev_dependencies:
 
 # The following section is specific to Flutter.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  assets: 
-      - assets/icons/
-      - assets/images/
-      - assets/logos/
+  assets:
+    - assets/icons/
+    - assets/images/
+    - assets/logos/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

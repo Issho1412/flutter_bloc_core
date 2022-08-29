@@ -7,16 +7,16 @@ const String sBtnbackHome = 'Back to Home';
 // Login screen data
 const String sBtnSave = 'Save QR';
 const String sBtnLogin = 'Login';
-const String sBtnForgotpassword = 'Forgot password';
+const String sBtnForgotPassword = 'Forgot password';
 const String sBtnRememberme = 'Remember me';
 const String sHintEmailInput = 'Enter your email';
-const String sHintpswInput = 'Enter your password';
+const String sHintPswInput = 'Enter your password';
 const String sWelcomeBack = 'Welcome back';
 const String sDeslogin = 'Sign in with your email and password\n or continue with social media';
 const String sNotAccount = 'Don\'t have an account. ';
 const String sEmail = 'Email';
 const String sPsw = 'Password';
-const String sLoginsuccessful = 'Login Success';
+const String sLoginSuccessful = 'Login Success';
 
 // Register screen data
 const String sBtnRegister = 'Register';
@@ -29,13 +29,13 @@ const String sConfirmPassword = 'Confirm password';
 const String sclicklinktoreset = "Please enter your email and we will send \nyou a link to return to your account";
 
 // Validate form 
-const String semailnotempty = 'Email isn\'t emptied';
-const String spasswordnotempty = 'Password isn\'t emptied';
-const String svalidate = 'Email or password is wrong';
-const String sotp = 'Otp verification';
-const String sresendotp = 'Resend OTP Code';
-const String sotpdes = 'We sent your code to +1 898 860 ***';
-const String sotpexpired = 'This code will expired in ';
+const String sEmailNotEmpty = 'Email isn\'t emptied';
+const String sPasswordNotEmpty = 'Password isn\'t emptied';
+const String sValidate = 'Email or password is wrong';
+const String sOtp = 'Otp verification';
+const String sResendotp = 'Resend OTP Code';
+const String sOtpdes = 'We sent your code to +1 898 860 ***';
+const String sOtpexpired = 'This code will expired in ';
 
 // Home data
 const String ssearchproduct = 'Search product';

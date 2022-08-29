@@ -14,6 +14,7 @@ void main() {
   // await Firebase.initializeApp();
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
+  // ignore: deprecated_member_use
   BlocOverrides.runZoned(() {
     runApp(const MyApp());
   }, blocObserver: CustomBlocObserver());

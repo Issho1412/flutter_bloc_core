@@ -1,3 +1,5 @@
+import 'package:src_core_bloc/pages/auth/login_page.dart';
+import 'package:src_core_bloc/pages/auth/login_success_page.dart';
 import 'package:src_core_bloc/pages/extras/trim_video_page.dart';
 import 'package:src_core_bloc/pages/extras/webview_page.dart';
 import 'package:src_core_bloc/pages/memes/index.dart';
@@ -15,6 +17,10 @@ class RouteList {
       case splashRoute: return createRoute(const SplashPage());
       case trimvideoRoute: return createRoute(TrimVideoPage(data: data));
       case webviewRoute: return createRoute(WebviewPage(data: data as Map<String, dynamic>));
+
+      // auth
+      case loginRoute: return createRoute(const LoginPage());
+      case loginSuccessRoute: return createRoute(const LoginSuccessPage());
       default:
         return MaterialPageRoute(builder: (_) => Scaffold(body: Center(child: Text('${settings.name}'))));
     }

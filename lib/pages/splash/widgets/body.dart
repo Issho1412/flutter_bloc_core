@@ -2,7 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:src_core_bloc/core/base/base_state.dart';
+import 'package:src_core_bloc/core/util/helper.dart';
 import 'package:src_core_bloc/features/splash/bloc/splash_bloc.dart';
+import 'package:src_core_bloc/routes.dart';
 import 'package:src_core_bloc/widgets/custom_button.dart';
 import '../../../core/config/size_config.dart';
 import '../../../core/util/colors.dart';
@@ -13,7 +15,7 @@ class Body extends StatefulWidget {
   const Body({Key? key}) : super(key: key);
   @override
     State<Body> createState() => _BodyState();
-  }
+}
 
 class _BodyState extends State<Body> {
   final SplashBloc _splashBloc = SplashBloc();
@@ -73,7 +75,9 @@ class _BodyState extends State<Body> {
                     const Spacer(),
                     CustomButton(
                       bgColor: kPrimaryColor,
-                      text: sBtnContinue, onTap: _splashBloc.onDirectToHome
+                      text: sBtnContinue, onTap: (){
+                        Helper().navigateTo(loginRoute);
+                      }
                     ),
                     const Spacer()
                   ],

@@ -2,6 +2,8 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:developer';
 import 'package:dio/dio.dart';
+import '../routes/locator.dart';
+import '../routes/navigate_service.dart';
 import 'enum.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
@@ -10,10 +12,10 @@ import '../../data/models/dioParam.dart';
 import '../connection/networkClient.dart';
 import '../connection/networkInfo.dart';
 
-
 class Helper extends NetworkClient<dynamic, DioParams> {
   DateTime currentBackPressTime = DateTime.now();
   static final Helper _instance = Helper._internal();
+  final NavigationService _navigationService = locator<NavigationService>(); 
 
   Helper._internal();
 
@@ -99,6 +101,19 @@ class Helper extends NetworkClient<dynamic, DioParams> {
           return response;
         });
     }
+  }
+
+  // METHOD FOR NAVIGATION SERVICE
+   Future<dynamic> navigateTo(String routeName, {dynamic args}) {
+    return _navigationService.navigateTo(routeName, args: args);
+  }
+
+  Future<dynamic> navigateReplaceTo(String routeName, {dynamic args}) {
+    return _navigationService.navigateReplaceTo(routeName, args: args);
+  }
+
+  void goBack() {
+    return _navigationService.goBack();
   }
 
   // API Call request solve
