@@ -28,7 +28,7 @@ class BasicLayout extends StatelessWidget {
         backgroundColor: kPrimaryColor,
       ),
       body: body ?? Container(),
-      floatingActionButton: floatButton ?? null,
+      floatingActionButton: floatButton,
     );
   }
 }

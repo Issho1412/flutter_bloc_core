@@ -1,5 +1,6 @@
 import 'package:src_core_bloc/pages/auth/login_page.dart';
 import 'package:src_core_bloc/pages/auth/login_success_page.dart';
+import 'package:src_core_bloc/pages/auth/register_page.dart';
 import 'package:src_core_bloc/pages/extras/trim_video_page.dart';
 import 'package:src_core_bloc/pages/extras/webview_page.dart';
 import 'package:src_core_bloc/pages/memes/index.dart';
@@ -20,6 +21,7 @@ class RouteList {
 
       // auth
       case loginRoute: return createRoute(const LoginPage());
+      case registerRoute: return createRoute(const RegisterPage());
       case loginSuccessRoute: return createRoute(const LoginSuccessPage());
       default:
         return MaterialPageRoute(builder: (_) => Scaffold(body: Center(child: Text('${settings.name}'))));

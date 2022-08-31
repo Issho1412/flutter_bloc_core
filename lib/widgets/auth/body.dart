@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:src_core_bloc/core/config/size_config.dart';
 import 'package:src_core_bloc/core/const.dart';
 import 'login_form.dart';
+import 'register_form.dart';
 
 class Body extends StatelessWidget {
   final String type;
@@ -16,9 +17,9 @@ class Body extends StatelessWidget {
     if (type == sBtnLogin) {
       _widget = const LoginForm();
     }
-    // if (type == sBtnRegister) {
-    //   _widget = RegisterForm();
-    // }
+    if (type == sBtnRegister) {
+      _widget = const RegisterForm();
+    }
     // if (type == sBtnForgotpassword) {
     //   _widget = ForgotPasswordForm();
     // }

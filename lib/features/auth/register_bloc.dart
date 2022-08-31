@@ -8,16 +8,19 @@ import 'package:src_core_bloc/core/util/validate.dart';
 import 'package:src_core_bloc/routes.dart';
 import '../../../core/base/base_state.dart';
 
-class LoginBloc extends Bloc<BaseEvent, BaseState> {
+class RegisterBloc extends Bloc<BaseEvent, BaseState> {
   final formKey = GlobalKey<FormState>();
-  TextEditingController emailEditingController = TextEditingController();
-  TextEditingController pswEditingController = TextEditingController();
-  bool isRemember = false;
+  final TextEditingController emailEditingController = TextEditingController();
+  final TextEditingController pswEditingController = TextEditingController();
+  final TextEditingController confirmPwdEditingController =
+      TextEditingController();
+  bool isAgree = false;
   List<String> errors = [];
 
-  LoginBloc() : super(const InitialState()) {
+  RegisterBloc() : super(const InitialState()) {
     on<FetchDataEvent>((event, emit) {
       emit(DataLoadingState());
+      // increaseValue();
       emit(const DataLoadedState());
     });
     init();
@@ -27,8 +30,8 @@ class LoginBloc extends Bloc<BaseEvent, BaseState> {
     log('LogicBloc init');
   }
 
-  void onChangeRemember(val) {
-    isRemember = val;
+  void updateAgreeStatus(val) {
+    isAgree = val;
     add(FetchDataEvent());
   }
 

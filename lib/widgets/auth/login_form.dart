@@ -1,12 +1,12 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:src_core_bloc/core/base/base_state.dart';
 import 'package:src_core_bloc/core/const.dart';
 import 'package:src_core_bloc/core/util/asset_path.dart';
 import 'package:src_core_bloc/core/util/colors.dart';
+import 'package:src_core_bloc/core/util/helper.dart';
 import 'package:src_core_bloc/features/auth/login_bloc.dart';
+import 'package:src_core_bloc/routes.dart';
 import 'package:src_core_bloc/widgets/auth/social_card_item.dart';
 import 'package:src_core_bloc/widgets/custom_button.dart';
 import 'package:src_core_bloc/widgets/custom_input.dart';
@@ -24,7 +24,6 @@ class _LoginFormState extends State<LoginForm> {
   final LoginBloc _loginBloc = LoginBloc();
 
   String password = '';
-  bool remember = false;
 
   @override
   Widget build(BuildContext context) {
@@ -73,13 +72,9 @@ class _LoginFormState extends State<LoginForm> {
                     Row(
                       children: [
                         Checkbox(
-                          value: remember,
+                          value: _loginBloc.isRemember,
                           activeColor: kPrimaryColor,
-                          onChanged: (value) {
-                            setState(() {
-                              // remember = value;
-                            });
-                          },
+                          onChanged: _loginBloc.onChangeRemember
                         ),
                         const CustomText(
                           text: sBtnRememberme,
@@ -137,12 +132,15 @@ class _LoginFormState extends State<LoginForm> {
                     size: kSize,
                   ),
                   InkWell(
-                      onTap: () {},
-                      child: const CustomText(
-                        text: sBtnRegister,
-                        weight: kBold,
-                        color: kPrimaryColor,
-                      ))
+                    onTap: () {
+                      Helper().navigateTo(registerRoute);
+                    },
+                    child: const CustomText(
+                      text: sBtnRegister,
+                      weight: kBold,
+                      color: kPrimaryColor,
+                    )
+                  )
                 ],
               ),
             ],
