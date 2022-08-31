@@ -26,7 +26,7 @@ const String sDesRegister = 'Complete your details or continue \nwith social med
 const String sConfirmPassword = 'Confirm password';
 
 // Forgot password data 
-const String sclicklinktoreset = "Please enter your email and we will send \nyou a link to return to your account";
+const String sClickLinkToReset = "Please enter your email and we will send \nyou a link to return to your account";
 
 // Validate form 
 const String sEmailNotEmpty = 'Email isn\'t emptied';

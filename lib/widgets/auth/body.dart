@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:src_core_bloc/core/config/size_config.dart';
 import 'package:src_core_bloc/core/const.dart';
+import 'forgot_password_form.dart';
 import 'login_form.dart';
 import 'register_form.dart';
 
@@ -20,9 +21,9 @@ class Body extends StatelessWidget {
     if (type == sBtnRegister) {
       _widget = const RegisterForm();
     }
-    // if (type == sBtnForgotpassword) {
-    //   _widget = ForgotPasswordForm();
-    // }
+    if (type == sBtnForgotPassword) {
+      _widget = const ForgotPasswordForm();
+    }
     // if (type == sOtp) {
     //   _widget = OTPForm();
     // }

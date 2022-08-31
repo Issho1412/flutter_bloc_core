@@ -20,7 +20,6 @@ class RegisterForm extends StatefulWidget {
 }
 
 class _RegisterFormState extends State<RegisterForm> {
-  final _formKey = GlobalKey<FormState>();
   final RegisterBloc _registerBloc = RegisterBloc();
 
   @override
@@ -45,7 +44,7 @@ class _RegisterFormState extends State<RegisterForm> {
                 SizedBox(height: SizeConfig.screenHeight! * 0.08),
                 // Start Form WIDGET
                 Form(
-                  key: _formKey,
+                  key: _registerBloc.formKey,
                   child: Column(
                     children: [
                       CustomInput(

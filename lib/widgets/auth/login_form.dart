@@ -82,7 +82,9 @@ class _LoginFormState extends State<LoginForm> {
                         ),
                         const Spacer(),
                         InkWell(
-                          onTap: () {},
+                          onTap: () {
+                            Helper().navigateTo(forgotRoute);
+                          },
                           child: const CustomText(
                             text: sBtnForgotPassword,
                             size: kSize,

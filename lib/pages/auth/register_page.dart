@@ -23,6 +23,7 @@ class RegisterPage extends StatelessWidget{
         body: const Body(
           type: sBtnRegister,
         ),
-      ));
+      )
+    );
   }
 }

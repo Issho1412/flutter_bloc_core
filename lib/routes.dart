@@ -1,3 +1,4 @@
+import 'package:src_core_bloc/pages/auth/forgot_password_page.dart';
 import 'package:src_core_bloc/pages/auth/login_page.dart';
 import 'package:src_core_bloc/pages/auth/login_success_page.dart';
 import 'package:src_core_bloc/pages/auth/register_page.dart';
@@ -23,6 +24,7 @@ class RouteList {
       case loginRoute: return createRoute(const LoginPage());
       case registerRoute: return createRoute(const RegisterPage());
       case loginSuccessRoute: return createRoute(const LoginSuccessPage());
+      case forgotRoute: return createRoute(const ForgotPasswordPage());
       default:
         return MaterialPageRoute(builder: (_) => Scaffold(body: Center(child: Text('${settings.name}'))));
     }
