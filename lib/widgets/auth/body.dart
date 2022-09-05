@@ -3,6 +3,7 @@ import 'package:src_core_bloc/core/config/size_config.dart';
 import 'package:src_core_bloc/core/const.dart';
 import 'forgot_password_form.dart';
 import 'login_form.dart';
+import 'otp_form.dart';
 import 'register_form.dart';
 
 class Body extends StatelessWidget {
@@ -24,9 +25,9 @@ class Body extends StatelessWidget {
     if (type == sBtnForgotPassword) {
       _widget = const ForgotPasswordForm();
     }
-    // if (type == sOtp) {
-    //   _widget = OTPForm();
-    // }
+    if (type == sOtp) {
+      _widget = const OTPForm();
+    }
 
     return SafeArea(
       child: SizedBox(

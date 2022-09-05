@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:src_core_bloc/core/const.dart';
 import 'package:src_core_bloc/data/demo_data.dart';
 import 'package:src_core_bloc/features/auth/forgot_password_bloc.dart';
+import 'package:src_core_bloc/routes.dart';
 import 'package:src_core_bloc/widgets/custom_button.dart';
 import 'package:src_core_bloc/widgets/custom_input.dart';
 import 'package:src_core_bloc/widgets/custom_text.dart';
 import '../../core/config/size_config.dart';
 import '../../core/util/colors.dart';
+import '../../core/util/helper.dart';
 import 'form_error.dart';
 
 class ForgotPasswordForm extends StatefulWidget {
@@ -51,7 +53,7 @@ class _ForgotPasswordFormState extends State<ForgotPasswordForm> {
               CustomButton(
                 bgColor: kPrimaryColor,
                 text: sBtnContinue, onTap: (){
-                  // Helper().navigateTo(otpRoute);
+                  Helper().navigateTo(otpRoute);
                 }
               ),
               SizedBox(height: SizeConfig.screenHeight! * 0.1),

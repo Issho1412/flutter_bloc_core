@@ -4,12 +4,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:src_core_bloc/core/base/base_event.dart';
 import '../../../core/base/base_state.dart';
 
-class ForgotPasswordBloc extends Bloc<BaseEvent, BaseState> {
+class OTPBloc extends Bloc<BaseEvent, BaseState> {
   final formKey = GlobalKey<FormState>();
-  TextEditingController emailEditingController = TextEditingController();
+  FocusNode pin2FocusNode = FocusNode();
+  FocusNode pin3FocusNode = FocusNode();
+  FocusNode pin4FocusNode = FocusNode();
   List<String> errors = [];
 
-  ForgotPasswordBloc() : super(const InitialState()) {
+  OTPBloc() : super(const InitialState()) {
     on<FetchDataEvent>((event, emit) {
       emit(DataLoadingState());
       emit(const DataLoadedState());
@@ -18,11 +20,7 @@ class ForgotPasswordBloc extends Bloc<BaseEvent, BaseState> {
   }
 
   void init() {
-    log('ForgotPasswordBloc init');
-  }
-
-  bool validateEmail() {
-    return false;
+    log('OTPBloc init');
   }
 
   void addDefect({String? error}) {

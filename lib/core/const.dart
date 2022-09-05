@@ -33,9 +33,9 @@ const String sEmailNotEmpty = 'Email isn\'t emptied';
 const String sPasswordNotEmpty = 'Password isn\'t emptied';
 const String sValidate = 'Email or password is wrong';
 const String sOtp = 'Otp verification';
-const String sResendotp = 'Resend OTP Code';
-const String sOtpdes = 'We sent your code to +1 898 860 ***';
-const String sOtpexpired = 'This code will expired in ';
+const String sResendOtp = 'Resend OTP Code';
+const String sOtpDes = 'We sent your code to +1 898 860 ***';
+const String sOtpExpired = 'This code will expired in ';
 
 // Home data
 const String ssearchproduct = 'Search product';
