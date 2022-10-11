@@ -59,3 +59,8 @@ const String sQrcode = 'QR Code';
 
 // TRIAL EXTRA FUNCTIONS
 const String sTrimVideo = 'Trim Video';
+
+const List sErrorNeedLogOut = [
+  "Invalid access token",
+  "トークンの有効期限が切れました。もう一度ログインしてください。",
+];

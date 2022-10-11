@@ -1,6 +1,7 @@
 // ignore: import_of_legacy_library_into_null_safe
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:src_core_bloc/core/util/colors.dart';
+import 'package:src_core_bloc/core/util/style/colors.dart';
+import 'package:src_core_bloc/core/util/style/others.dart';
 import 'package:src_core_bloc/data/models/meme/meme.dart';
 import 'package:flutter/material.dart';
 import '../custom_text.dart';
@@ -16,9 +17,9 @@ class MemeItem extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: kColorSLight,
+      color: ColorConst.kColorSLight,
       child: Padding(
-        padding: const EdgeInsets.all(kPaddingDefault/2),
+        padding: const EdgeInsets.all(StyleOthersConst.kPaddingDefault/2),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.end,
           crossAxisAlignment: CrossAxisAlignment.end,
@@ -38,7 +39,9 @@ class MemeItem extends StatelessWidget{
             ),
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: kPaddingDefault/2),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: StyleOthersConst.kPaddingDefault/2
+                ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -48,7 +51,7 @@ class MemeItem extends StatelessWidget{
                     ),
                     CustomText(
                       text: "${meme.width ?? 0} x ${meme.height ?? 0}",
-                      size: kSize - 3,
+                      size: StyleOthersConst.kSize - 3,
                     ),
                     const CustomText(text: "")
                   ],
@@ -57,7 +60,7 @@ class MemeItem extends StatelessWidget{
             ),
             CustomText(
               text: meme.id ?? '',
-              size: kSize - 4,
+              size: StyleOthersConst.kSize - 4,
             ),
           ],
         ),

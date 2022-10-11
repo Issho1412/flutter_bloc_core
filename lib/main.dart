@@ -6,6 +6,7 @@ import 'package:src_core_bloc/core/bloc_observer.dart';
 import 'package:src_core_bloc/core/config/theme/basic_theme.dart';
 import 'package:src_core_bloc/core/routes/locator.dart';
 import 'package:src_core_bloc/core/routes/navigate_service.dart';
+import 'package:src_core_bloc/core/util/globals.dart';
 import 'package:src_core_bloc/routes.dart';
 
 void main() {
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: theme(),
       // home:  const SplashPage(),
+      scaffoldMessengerKey: GlobalsKey.snackbarKey,
       navigatorKey: locator<NavigationService>().navigatorKey,
       initialRoute: splashRoute,
       onGenerateRoute: RouteList.generateRoute,

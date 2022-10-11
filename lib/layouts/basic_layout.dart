@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../core/util/colors.dart';
+import 'package:src_core_bloc/core/util/style/others.dart';
+import '../core/util/style/colors.dart';
 import '../widgets/custom_text.dart';
 
 class BasicLayout extends StatelessWidget {
@@ -23,9 +24,9 @@ class BasicLayout extends StatelessWidget {
     return Scaffold(
       appBar: !showAppBar ? null : AppBar(
         automaticallyImplyLeading: showLeading,
-        title: CustomText(text: titleAppBar ?? '', color: kTxtWhite, weight: kBold, size: kSize + 2,),
+        title: CustomText(text: titleAppBar ?? '', color: ColorConst.kTxtWhite, weight: StyleOthersConst.kBold, size: StyleOthersConst.kSize + 2,),
         centerTitle: true,
-        backgroundColor: kPrimaryColor,
+        backgroundColor: ColorConst.kPrimaryColor,
       ),
       body: body ?? Container(),
       floatingActionButton: floatButton,

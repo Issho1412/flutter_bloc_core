@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:src_core_bloc/core/base/base_event.dart';
-import 'package:src_core_bloc/core/util/colors.dart';
+import 'package:src_core_bloc/core/util/style/colors.dart';
 import '../../../core/base/base_state.dart';
 
 class WebviewBloc extends Bloc<BaseEvent, BaseState> {
@@ -45,7 +45,7 @@ class WebviewBloc extends Bloc<BaseEvent, BaseState> {
   void initPullRefresh() {
     pullToRefreshController = PullToRefreshController(
       options: PullToRefreshOptions(
-        color: kTxtInfo,
+        color: ColorConst.kTxtInfo,
       ),
       onRefresh: () async {
         if (Platform.isAndroid) {

@@ -3,11 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:src_core_bloc/core/base/base_state.dart';
 import 'package:src_core_bloc/core/util/helper.dart';
+import 'package:src_core_bloc/core/util/style/colors.dart';
+import 'package:src_core_bloc/core/util/style/others.dart';
 import 'package:src_core_bloc/features/splash/bloc/splash_bloc.dart';
 import 'package:src_core_bloc/routes.dart';
 import 'package:src_core_bloc/widgets/custom_button.dart';
 import '../../../core/config/size_config.dart';
-import '../../../core/util/colors.dart';
 import '../../../data/demo_data.dart';
 import 'splash_item.dart';
 
@@ -22,13 +23,13 @@ class _BodyState extends State<Body> {
   
   AnimatedContainer buildDot({int index = 0}) {
     return AnimatedContainer(
-      duration: kAnimationDuration,
+      duration: StyleOthersConst.kAnimationDuration,
       margin: const EdgeInsets.only(right: 5),
-      height: kHeightDot,
-      width: _splashBloc.currentPage == index ? 20 : kHeightDot,
+      height: StyleOthersConst.kHeightDot,
+      width: _splashBloc.currentPage == index ? 20 : StyleOthersConst.kHeightDot,
       decoration: BoxDecoration(
-        color: _splashBloc.currentPage == index ? kPrimaryColor : kColorDotOpacity,
-        borderRadius: BorderRadius.circular(kRadius/2),
+        color: _splashBloc.currentPage == index ? ColorConst.kPrimaryColor : ColorConst.kColorDotOpacity,
+        borderRadius: BorderRadius.circular(StyleOthersConst.kRadius/2),
       ),
     );
   }
@@ -56,7 +57,7 @@ class _BodyState extends State<Body> {
             Expanded(
               flex: 2,
               child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(kPaddingDefault)),
+                padding: EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(StyleOthersConst.kPaddingDefault)),
                 child: Column(
                   children: [
                     const Spacer(),
@@ -74,7 +75,7 @@ class _BodyState extends State<Body> {
                     ),
                     const Spacer(),
                     CustomButton(
-                      bgColor: kPrimaryColor,
+                      bgColor: ColorConst.kPrimaryColor,
                       text: sBtnContinue, onTap: (){
                         Helper().navigateTo(loginRoute);
                       }

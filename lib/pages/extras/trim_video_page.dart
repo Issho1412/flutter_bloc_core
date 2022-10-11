@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:src_core_bloc/core/base/base_event.dart';
 import 'package:src_core_bloc/core/base/base_state.dart';
-import 'package:src_core_bloc/core/util/colors.dart';
+import 'package:src_core_bloc/core/util/style/colors.dart';
 import 'package:src_core_bloc/features/extras/trim_video/trim_video_bloc.dart';
 import 'package:video_trimmer/video_trimmer.dart';
 
@@ -43,7 +43,7 @@ class _TrimVideoPageState extends State<TrimVideoPage> {
                   Visibility(
                     visible: _trimVideoBloc.progressVisibility,
                     child: const LinearProgressIndicator(
-                      backgroundColor: kTxtDanger,
+                      backgroundColor: ColorConst.kTxtDanger,
                     ),
                   ),
                   ElevatedButton(
@@ -87,12 +87,12 @@ class _TrimVideoPageState extends State<TrimVideoPage> {
                       ? const Icon(
                           Icons.pause,
                           size: 80.0,
-                          color: kTxtWhite,
+                          color: ColorConst.kTxtWhite,
                         )
                       : const Icon(
                           Icons.play_arrow,
                           size: 80.0,
-                          color: kTxtWhite,
+                          color: ColorConst.kTxtWhite,
                         ),
                       onPressed: () {
                         _trimVideoBloc.play();

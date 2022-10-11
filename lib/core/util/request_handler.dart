@@ -1,9 +1,13 @@
 import 'dart:developer';
 
+import 'package:src_core_bloc/core/const.dart';
+import 'package:src_core_bloc/core/util/enum.dart';
 import '../../features/error/server_exception.dart';
 import '../../features/error/server_failture.dart';
 import '../connection/networkInfo.dart';
 import 'package:dartz/dartz.dart';
+
+import 'snackbar.dart';
 
 Future<T> handleRemoteRequest<T>(Future<T> Function() onRequest) async {
   try {
@@ -37,22 +41,42 @@ Future<Either<Failure, T>> handleRepositoryCall<T>(NetworkInfo networkInfo,
 handleEither<B, T extends Failure, S>(Either<T, S> either, B Function(S r) onResult,
     {Function(String message)? onError, bool? shouldUseDefaultError, String? defaultError}) {
   either.fold((l) {
+    int index = sErrorNeedLogOut.indexOf(l.message);
+    handleError(l.message, shouldUseDefaultError: shouldUseDefaultError ?? true, index: index);
+    if (sErrorNeedLogOut.contains(l.message)) {
+      // Get.offAllNamed(OptionScreen.router);
+    }
     log(l.message, name: 'EITHER ERROR');
-    // if (EviConst.error.contains(l.message)) {
-    //   int index = EviConst.error.indexOf(l.message);
-    //   if (index == 0) {
-    //     Get.offAllNamed(OptionScreen.router);
-    //   }
-
-    //   showToast(EviConst.errorText[index], ToastType.fail);
-    // }
     if (onError != null) {
       onError(l.message);
     }
   }, onResult);
 }
 
-Future handleError(String message, {bool shouldUseDefaultError = true, index}) async {
-  // throw message;
+handleEitherReturn<B, T extends Failure, S>(Either<T, S> either, B Function(S r) onResult, {Function()? onError}) {
+  return either.fold((l) {
+    int index = sErrorNeedLogOut.indexOf(l.message);
+    handleError(l.message, shouldUseDefaultError: true, index: index);
+
+    if (sErrorNeedLogOut.contains(l.message)) {
+      // Helper().navigateTo(otpRoute);
+    }
+    log(l.message, name: 'EITHER ERROR');
+    if (onError != null) {
+      onError();
+    }
+  }, onResult);
 }
+
+Future handleError(String message, {bool shouldUseDefaultError = true, int index = -1}) async {
+  // throw message;
+  String msg = message;
+  if (message.split('DioError').length > 1 || message.split('Timeout').length > 1) {
+    msg = 'timeout';
+  }
+  showSnackBar(
+    msg, SnackType.fail
+  );
+}
+
 

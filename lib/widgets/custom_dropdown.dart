@@ -1,8 +1,10 @@
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:src_core_bloc/core/util/colors.dart';
 import 'package:src_core_bloc/features/custom_dropdown/dropdown_bloc.dart';
+
+import '../core/util/style/colors.dart';
+import '../core/util/style/others.dart';
 
 class CustomDropdownButton<T> extends StatelessWidget {
   final dropdownBloc = DropdownBloc();
@@ -45,8 +47,8 @@ class CustomDropdownButton<T> extends StatelessWidget {
                   ? Text(
                       hint!,
                       style: const TextStyle(
-                        fontSize: kSize,
-                        color: kTxtDefault,
+                        fontSize: StyleOthersConst.kSize,
+                        color: ColorConst.kTxtDefault,
                       ),
                       overflow: TextOverflow.ellipsis,
                     )
@@ -56,7 +58,7 @@ class CustomDropdownButton<T> extends StatelessWidget {
                           child: Text(
                             'Select a option',
                             style: TextStyle(
-                              fontSize: kSize,
+                              fontSize: StyleOthersConst.kSize,
                               fontWeight: FontWeight.bold,
                             ),
                             overflow: TextOverflow.ellipsis,
@@ -97,7 +99,7 @@ class CustomDropdownButton<T> extends StatelessWidget {
                     borderRadius: BorderRadius.circular(5),
                     border: Border.all(
                       width: 1,
-                      color: kTextHeadline6,
+                      color: ColorConst.kTextHeadline6,
                     ),
                     color: Colors.white,
                   ),
@@ -116,7 +118,7 @@ class CustomDropdownButton<T> extends StatelessWidget {
                   scrollbarThickness: 6,
                   scrollbarAlwaysShow: true,
                   offset: const Offset(-20, 0),
-                  selectedItemHighlightColor: kTxtInfo,
+                  selectedItemHighlightColor: ColorConst.kTxtInfo,
                 ),
               );
             })

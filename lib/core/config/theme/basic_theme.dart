@@ -1,10 +1,10 @@
 import 'package:src_core_bloc/core/const.dart';
-import '../../util/colors.dart';
 import 'package:flutter/material.dart';
+import '../../util/style/colors.dart';
 
 ThemeData theme() {
   return ThemeData(
-    scaffoldBackgroundColor: kTxtWhite,
+    scaffoldBackgroundColor: ColorConst.kTxtWhite,
     fontFamily: sFontDefault,
     appBarTheme: appBarTheme(),
     textTheme: textTheme(),
@@ -14,14 +14,14 @@ ThemeData theme() {
 }
 
 TextTheme textTheme() => const TextTheme(
-  bodyText1: TextStyle(color: kTextColor),
-  bodyText2: TextStyle(color: kTextColor)
+  bodyText1: TextStyle(color: ColorConst.kTextColor),
+  bodyText2: TextStyle(color: ColorConst.kTextColor)
 );
 
 InputDecorationTheme inputDecorationTheme() {
   OutlineInputBorder outlineInputBorder = OutlineInputBorder(
     borderRadius: BorderRadius.circular(28),
-    borderSide: const BorderSide(color: kTextColor),
+    borderSide: const BorderSide(color: ColorConst.kTextColor),
     gapPadding: 10,
   );
   return InputDecorationTheme(
@@ -37,9 +37,9 @@ InputDecorationTheme inputDecorationTheme() {
 }
 
 AppBarTheme appBarTheme() => const AppBarTheme(
-  color: kTxtWhite,
+  color: ColorConst.kTxtWhite,
   elevation: 0,
-  iconTheme: IconThemeData(color: kTxtWhite),
-  titleTextStyle: TextStyle(color: kTextHeadline6), 
-  toolbarTextStyle: TextStyle(color: kTextHeadline6), 
+  iconTheme: IconThemeData(color: ColorConst.kTxtWhite),
+  titleTextStyle: TextStyle(color: ColorConst.kTextHeadline6), 
+  toolbarTextStyle: TextStyle(color: ColorConst.kTextHeadline6), 
 );

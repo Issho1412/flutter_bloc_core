@@ -3,12 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:src_core_bloc/core/config/size_config.dart';
 import 'package:src_core_bloc/core/const.dart';
 import 'package:src_core_bloc/core/util/asset_path.dart';
-import 'package:src_core_bloc/core/util/colors.dart';
+import 'package:src_core_bloc/core/util/style/colors.dart';
 import 'package:src_core_bloc/core/util/helper.dart';
 import 'package:src_core_bloc/layouts/basic_layout.dart';
 import 'package:src_core_bloc/widgets/custom_button.dart';
 import 'package:src_core_bloc/widgets/custom_image.dart';
 import 'package:src_core_bloc/widgets/custom_text.dart';
+
+import '../../core/util/style/others.dart';
 
 class LoginSuccessPage extends StatelessWidget {
   const LoginSuccessPage({Key? key}) : super(key: key);
@@ -28,13 +30,13 @@ class LoginSuccessPage extends StatelessWidget {
             SizedBox(height: SizeConfig.screenHeight! * 0.08),
             CustomText(
               text: sLoginSuccessful,
-              weight: kBold,
+              weight: StyleOthersConst.kBold,
               size: getProportionateScreenWidth(30),
-              color: kTxtDefault,
+              color: ColorConst.kTxtDefault,
             ),
             const Spacer(),
             CustomButton(
-              bgColor: kPrimaryColor,
+              bgColor: ColorConst.kPrimaryColor,
               width: 0.7,
               text: sBtnbackHome, onTap: (){
                 Helper().goBack();

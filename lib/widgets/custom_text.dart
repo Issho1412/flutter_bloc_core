@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../core/util/colors.dart';
+import 'package:src_core_bloc/core/util/style/colors.dart';
+import 'package:src_core_bloc/core/util/style/others.dart';
 
 class CustomText extends StatelessWidget {
   final String? text;
@@ -32,8 +33,8 @@ class CustomText extends StatelessWidget {
       maxLines: line ?? 1,
       style: TextStyle(
         decoration: underline  ?? TextDecoration.none,
-        fontSize: size ?? kSize,
-        color: color ?? kTextColor,
+        fontSize: size ?? StyleOthersConst.kSize,
+        color: color ?? ColorConst.kTextColor,
         fontWeight: weight ?? FontWeight.normal),
     );
   }

@@ -10,7 +10,8 @@ import 'package:src_core_bloc/widgets/custom_button.dart';
 import 'package:src_core_bloc/widgets/custom_input.dart';
 import 'package:src_core_bloc/widgets/custom_text.dart';
 import '../../core/config/size_config.dart';
-import '../../core/util/colors.dart';
+import '../../core/util/style/colors.dart';
+import '../../core/util/style/others.dart';
 import 'form_error.dart';
 
 class RegisterForm extends StatefulWidget {
@@ -32,14 +33,14 @@ class _RegisterFormState extends State<RegisterForm> {
               children: [
                 SizedBox(height: SizeConfig.screenHeight! * 0.04),
                 CustomText(
-                  color: kTxtDefault,
+                  color: ColorConst.kTxtDefault,
                   text: sRegisterAccount,
-                  size: getProportionateScreenWidth(kHeadSize - 8),
-                  weight: kBold,
+                  size: getProportionateScreenWidth(StyleOthersConst.kHeadSize - 8),
+                  weight: StyleOthersConst.kBold,
                 ),
                 const CustomText(
                   text: sDesRegister,
-                  size: kSize - 1,
+                  size: StyleOthersConst.kSize - 1,
                 ),
                 SizedBox(height: SizeConfig.screenHeight! * 0.08),
                 // Start Form WIDGET
@@ -54,7 +55,7 @@ class _RegisterFormState extends State<RegisterForm> {
                         placeHolder: sHintEmailInput,
                       ),
                       SizedBox(
-                        height: getProportionateScreenHeight(kHeightDefault / 2),
+                        height: getProportionateScreenHeight(StyleOthersConst.kHeightDefault / 2),
                       ),
                       CustomInput(
                           labelTxt: sPsw,
@@ -62,7 +63,7 @@ class _RegisterFormState extends State<RegisterForm> {
                           controller: _registerBloc.pswEditingController,
                           placeHolder: sHintPswInput),
                       SizedBox(
-                        height: getProportionateScreenHeight(kHeightDefault / 2),
+                        height: getProportionateScreenHeight(StyleOthersConst.kHeightDefault / 2),
                       ),
                       CustomInput(
                           labelTxt: sConfirmPassword,
@@ -70,28 +71,28 @@ class _RegisterFormState extends State<RegisterForm> {
                           controller: _registerBloc.confirmPwdEditingController,
                           placeHolder: sHintPswInput),
                       SizedBox(
-                        height: getProportionateScreenHeight(kHeightDefault / 2),
+                        height: getProportionateScreenHeight(StyleOthersConst.kHeightDefault / 2),
                       ),
                       Row(
                         children: [
                           Checkbox(
                             value: _registerBloc.isAgree,
-                            activeColor: kPrimaryColor,
+                            activeColor: ColorConst.kPrimaryColor,
                             onChanged: _registerBloc.updateAgreeStatus
                           ),
                           const CustomText(
                             text: sAgreeTerm,
-                            size: kSize - 2,
+                            size: StyleOthersConst.kSize - 2,
                             align: TextAlign.left,
                           ),
                         ],
                       ),
                       FormError(errors: _registerBloc.errors),
                       SizedBox(
-                        height: getProportionateScreenHeight(kHeightDefault / 2),
+                        height: getProportionateScreenHeight(StyleOthersConst.kHeightDefault / 2),
                       ),
                       CustomButton(
-                          bgColor: kPrimaryColor,
+                          bgColor: ColorConst.kPrimaryColor,
                           text: sBtnContinue,
                           onTap: () {
                             Helper().navigateTo(loginRoute);

@@ -1,6 +1,7 @@
 import 'package:src_core_bloc/core/const.dart';
+import 'package:src_core_bloc/core/util/style/others.dart';
 import 'package:src_core_bloc/widgets/custom_text.dart';
-import '../../core/util/colors.dart';
+import '../../core/util/style/colors.dart';
 import '../../widgets/auth/body.dart';
 import 'package:flutter/material.dart';
 
@@ -14,11 +15,11 @@ class RegisterPage extends StatelessWidget{
         appBar: AppBar(
           title: const CustomText(
             text: sBtnRegister, 
-            color: kTxtWhite, 
-            weight: kBold,
+            color: ColorConst.kTxtWhite, 
+            weight: StyleOthersConst.kBold,
           ),
           centerTitle: true,
-          backgroundColor: kPrimaryColor,
+          backgroundColor: ColorConst.kPrimaryColor,
         ),
         body: const Body(
           type: sBtnRegister,

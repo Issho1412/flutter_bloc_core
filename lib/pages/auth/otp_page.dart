@@ -1,6 +1,7 @@
 import 'package:src_core_bloc/core/const.dart';
+import 'package:src_core_bloc/core/util/style/others.dart';
 import 'package:src_core_bloc/widgets/custom_text.dart';
-import '../../core/util/colors.dart';
+import '../../core/util/style/colors.dart';
 import 'package:flutter/material.dart';
 import '../../widgets/auth/body.dart';
 
@@ -11,9 +12,9 @@ class OtpPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const CustomText(text: sOtp, color: kTxtWhite, weight: kBold,),
+        title: const CustomText(text: sOtp, color: ColorConst.kTxtWhite, weight: StyleOthersConst.kBold,),
         centerTitle: true,
-        backgroundColor: kPrimaryColor,
+        backgroundColor: ColorConst.kPrimaryColor,
       ),
       body: const Body(type: sOtp,),
     );

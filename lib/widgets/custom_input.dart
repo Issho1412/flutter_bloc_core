@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:src_core_bloc/core/util/colors.dart';
+import 'package:src_core_bloc/core/util/style/colors.dart';
 
 class CustomInput extends StatelessWidget {
   final String? placeHolder;
@@ -39,7 +39,7 @@ class CustomInput extends StatelessWidget {
         labelText: labelTxt ?? '',
         labelStyle: const TextStyle(
           fontWeight: FontWeight.w500,
-          color: kTextColor
+          color: ColorConst.kTextColor
         ),
         prefixIcon: preIcon,
         hintStyle: const TextStyle(fontSize: 14.0),
