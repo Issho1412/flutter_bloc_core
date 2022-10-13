@@ -12,7 +12,8 @@ const String sBtnRememberme = 'Remember me';
 const String sHintEmailInput = 'Enter your email';
 const String sHintPswInput = 'Enter your password';
 const String sWelcomeBack = 'Welcome back';
-const String sDeslogin = 'Sign in with your email and password\n or continue with social media';
+const String sDeslogin =
+    'Sign in with your email and password\n or continue with social media';
 const String sNotAccount = 'Don\'t have an account. ';
 const String sEmail = 'Email';
 const String sPsw = 'Password';
@@ -21,14 +22,17 @@ const String sLoginSuccessful = 'Login Success';
 // Register screen data
 const String sBtnRegister = 'Register';
 const String sRegisterAccount = 'Register account';
-const String sAgreeTerm = 'By continuing your confirm that you agree \nwith our Term and Condition';
-const String sDesRegister = 'Complete your details or continue \nwith social media';
+const String sAgreeTerm =
+    'By continuing your confirm that you agree \nwith our Term and Condition';
+const String sDesRegister =
+    'Complete your details or continue \nwith social media';
 const String sConfirmPassword = 'Confirm password';
 
-// Forgot password data 
-const String sClickLinkToReset = "Please enter your email and we will send \nyou a link to return to your account";
+// Forgot password data
+const String sClickLinkToReset =
+    "Please enter your email and we will send \nyou a link to return to your account";
 
-// Validate form 
+// Validate form
 const String sEmailNotEmpty = 'Email isn\'t emptied';
 const String sPasswordNotEmpty = 'Password isn\'t emptied';
 const String sValidate = 'Email or password is wrong';
@@ -48,7 +52,7 @@ const String sPopularproducts = 'Popular products';
 // Product
 const String sAddToCart = 'Add To Cart';
 
-// Profile 
+// Profile
 const String sProfileItem1 = 'Account';
 const String sProfileItem2 = 'Notifications';
 const String sProfileItem3 = 'Help';

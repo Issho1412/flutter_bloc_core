@@ -30,7 +30,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: theme(),
-      // home:  const SplashPage(),
       scaffoldMessengerKey: GlobalsKey.snackbarKey,
       navigatorKey: locator<NavigationService>().navigatorKey,
       initialRoute: splashRoute,

@@ -8,6 +8,8 @@ import 'package:src_core_bloc/core/util/style/others.dart';
 import 'package:src_core_bloc/features/home/home_bloc.dart';
 import 'package:src_core_bloc/features/home/home_event.dart';
 import 'package:src_core_bloc/routes.dart';
+import 'package:src_core_bloc/widgets/home/profile/profile_view.dart';
+import 'package:src_core_bloc/widgets/home/setting_view.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -60,9 +62,9 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver, Single
                 controller: _homeBloc.tabController,
                 children: const <Widget>[
                   Text('TAB A'),
-                  Text('TAB B'),
                   Text('TAB C'),
-                  Text('TAB D'),
+                  SettingView(),
+                  ProfileView(),
                 ],
               ),
               bottomNavigationBar: BottomAppBar(
@@ -86,16 +88,16 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver, Single
                       label: 'Home',
                     ),
                     BottomNavigationBarItem(
-                      icon: Icon(Icons.person),
-                      label: 'Profile',
+                      icon: Icon(Icons.history_outlined),
+                      label: 'History',
                     ),
                     BottomNavigationBarItem(
                       icon: Icon(Icons.message_rounded),
                       label: 'Messages',
                     ),
                     BottomNavigationBarItem(
-                      icon: Icon(Icons.settings),
-                      label: 'Settings',
+                      icon: Icon(Icons.person),
+                      label: 'Profile',
                     ),
                   ],
                 ),

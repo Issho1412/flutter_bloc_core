@@ -31,6 +31,7 @@ class _Icon {
   String icoBell = _getImagePath(iconRoot + 'bell.svg');
   String icoBill = _getImagePath(iconRoot + 'bill.svg');
   String icoCart = _getImagePath(iconRoot + 'cart.svg');
+  String icoCamera = _getImagePath(iconRoot + 'camera.svg');
   String icoDiscover = _getImagePath(iconRoot + 'discover.svg');
   String icoFlash = _getImagePath(iconRoot + 'flash.svg');
   String icoGame = _getImagePath(iconRoot + 'game.svg');

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:src_core_bloc/core/util/style/colors.dart';
 import 'package:src_core_bloc/core/util/enum.dart';
 import 'package:src_core_bloc/core/util/globals.dart';
+import 'package:src_core_bloc/core/util/style/others.dart';
 
 void showSnackBar(String msg, [type = SnackType.success]) {
   Color? textColor = ColorConst.kTextColor;
@@ -10,18 +11,33 @@ void showSnackBar(String msg, [type = SnackType.success]) {
       textColor = ColorConst.kTxtDanger;
       break;
     case SnackType.success:
-      textColor = ColorConst.kTxtInfo;
+      textColor = ColorConst.kTxtSuccess;
       break;
     default:
       textColor = ColorConst.kTxtDefault;
   }
   final SnackBar snackBar = SnackBar(
-      content: Text(
-    msg,
-    style: TextStyle(
-      color: textColor ,
-      fontSize: 15, fontWeight: FontWeight.w400),
-  ));
+    backgroundColor: ColorConst.kTransparent,
+    elevation: 0,
+    content: Container(
+      padding: const EdgeInsets.all(StyleOthersConst.kPaddingDefault),
+      decoration: BoxDecoration(
+        borderRadius: const BorderRadius.all(Radius.circular(20)),
+        color: textColor
+      ),
+      child: Row(
+        children: [
+          Text(
+            msg,
+            style: const TextStyle(
+              color: ColorConst.kTxtWhite ,
+              fontSize: 15, fontWeight: FontWeight.w400),
+          ),
+          // const Icon(Icons.done_outline)
+        ],
+      ),
+    )
+  );
   GlobalsKey.snackbarKey.currentState?.clearSnackBars();
   GlobalsKey.snackbarKey.currentState?.showSnackBar(snackBar);
 }
