@@ -6,6 +6,7 @@ import 'package:src_core_bloc/core/util/asset_path.dart';
 import 'package:src_core_bloc/core/util/style/colors.dart';
 import 'package:src_core_bloc/core/util/helper.dart';
 import 'package:src_core_bloc/layouts/basic_layout.dart';
+import 'package:src_core_bloc/routes.dart';
 import 'package:src_core_bloc/widgets/custom_button.dart';
 import 'package:src_core_bloc/widgets/custom_image.dart';
 import 'package:src_core_bloc/widgets/custom_text.dart';
@@ -39,7 +40,7 @@ class LoginSuccessPage extends StatelessWidget {
               bgColor: ColorConst.kPrimaryColor,
               width: 0.7,
               text: sBtnbackHome, onTap: (){
-                Helper().goBack();
+                Helper().navigateReplaceTo(homeRoute);
               }
             ),
             const Spacer(),

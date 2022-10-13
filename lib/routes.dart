@@ -3,8 +3,10 @@ import 'package:src_core_bloc/pages/auth/login_page.dart';
 import 'package:src_core_bloc/pages/auth/login_success_page.dart';
 import 'package:src_core_bloc/pages/auth/otp_page.dart';
 import 'package:src_core_bloc/pages/auth/register_page.dart';
+import 'package:src_core_bloc/pages/extras/qr_code_page.dart';
 import 'package:src_core_bloc/pages/extras/trim_video_page.dart';
 import 'package:src_core_bloc/pages/extras/webview_page.dart';
+import 'package:src_core_bloc/pages/home_page.dart';
 import 'package:src_core_bloc/pages/memes/index.dart';
 import 'package:flutter/material.dart';
 import 'package:src_core_bloc/pages/splash/splash_page.dart';
@@ -20,6 +22,7 @@ class RouteList {
       case splashRoute: return createRoute(const SplashPage());
       case trimvideoRoute: return createRoute(TrimVideoPage(data: data));
       case webviewRoute: return createRoute(WebviewPage(data: data as Map<String, dynamic>));
+      case qrcodeRoute: return createRoute(const QRCodePage());
 
       // auth
       case loginRoute: return createRoute(const LoginPage());
@@ -27,6 +30,8 @@ class RouteList {
       case loginSuccessRoute: return createRoute(const LoginSuccessPage());
       case forgotRoute: return createRoute(const ForgotPasswordPage());
       case otpRoute: return createRoute(const OtpPage());
+
+      case homeRoute: return createRoute(const HomePage());
       default:
         return MaterialPageRoute(builder: (_) => Scaffold(body: Center(child: Text('${settings.name}'))));
     }

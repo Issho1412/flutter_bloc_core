@@ -8,8 +8,7 @@ import 'package:src_core_bloc/features/extras/qr_code/qr_code_bloc.dart';
 import 'package:src_core_bloc/widgets/custom_button.dart';
 
 class QRCodePage extends StatefulWidget {
-  const QRCodePage({Key? key, required this.data}) : super(key: key);
-  final dynamic data;
+  const QRCodePage({Key? key}) : super(key: key);
 
   @override
   State<QRCodePage> createState() => _QRCodePageState();
@@ -34,51 +33,51 @@ class _QRCodePageState extends State<QRCodePage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-      body: BlocBuilder<QRCodeBloc, BaseState>(
-        bloc: _qrCodeBloc,
-        builder: (context, _) => Center(
-          child: Container(
-            padding: const EdgeInsets.only(bottom: 30.0),
-            color: Colors.black,
-            child: Column(
-              children: [
-                Expanded(
-                  flex: 5,
-                  child: QRView(
-                    key: _qrCodeBloc.qrKey,
-                    onQRViewCreated: _qrCodeBloc.onQRViewCreated,
+        body: BlocBuilder<QRCodeBloc, BaseState>(
+          bloc: _qrCodeBloc,
+          builder: (context, _) => Center(
+            child: Container(
+              padding: const EdgeInsets.only(bottom: 30.0),
+              color: Colors.black,
+              child: Column(
+                children: [
+                  Expanded(
+                    flex: 5,
+                    child: QRView(
+                      key: _qrCodeBloc.qrKey,
+                      onQRViewCreated: _qrCodeBloc.onQRViewCreated,
+                    ),
                   ),
-                ),
-                Expanded(
-                  flex: 1,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      (_qrCodeBloc.res != null)
-                        ? Center(
-                          child: Text(
-                          'Barcode Type: ${_qrCodeBloc.res?.format}\nData: ${_qrCodeBloc.res?.code}') )                   
-                        : const Text('Scan a code'),
-                    ]
+                  Expanded(
+                    flex: 1,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        (_qrCodeBloc.res != null)
+                          ? Center(
+                            child: Text(
+                            'Barcode Type: ${_qrCodeBloc.res?.format}\nData: ${_qrCodeBloc.res?.code}') )                   
+                          : const Text('Scan a code'),
+                      ]
+                    ),
                   ),
-                ),
-                Container(
-                  color: ColorConst.kPrimaryColor,
-                  child: Row(
-                    children: [
-                      CustomButton(
-                        bgColor: ColorConst.kPrimaryColor,
-                        text: sBtnSave, onTap: _qrCodeBloc.catchImage
-                      ),
-                    ],
+                  Container(
+                    color: ColorConst.kPrimaryColor,
+                    child: Row(
+                      children: [
+                        CustomButton(
+                          bgColor: ColorConst.kPrimaryColor,
+                          text: sBtnSave, onTap: _qrCodeBloc.catchImage
+                        ),
+                      ],
+                    )
                   )
-                )
-              ],
-            )
-          ),
+                ],
+              )
+            ),
+          )
         )
-      )
       )
     );
   }

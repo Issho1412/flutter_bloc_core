@@ -18,12 +18,11 @@ class ColorConst {
 
   static const kTxtInfo = Color(0xFF3795F1);
   static const kTxtDanger = Colors.red;
+  static const kTxtSuccess = Color(0xFF6ED097);
 
   static const kDarkBlue = Color(0xFF01249D);
-
 
   static const kTransparent = Colors.transparent;
   static const kTxtWhite = Colors.white;
   static const kTxtDefault = Colors.black;
 }
-

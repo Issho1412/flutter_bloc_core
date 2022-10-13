@@ -104,7 +104,7 @@ class Helper extends NetworkClient<dynamic, DioParams> {
   }
 
   // METHOD FOR NAVIGATION SERVICE
-   Future<dynamic> navigateTo(String routeName, {dynamic args}) {
+  Future<dynamic> navigateTo(String routeName, {dynamic args}) {
     return _navigationService.navigateTo(routeName, args: args);
   }
 
