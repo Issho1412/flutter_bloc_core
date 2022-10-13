@@ -41,6 +41,7 @@ class ProfileView extends StatelessWidget {
             ProfileMenuItem(
               text: "Log Out",
               icon: Icons.logout,
+              isHideArrow: false,
               press: () {},
             ),
           ],

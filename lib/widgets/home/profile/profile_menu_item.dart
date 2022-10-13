@@ -6,14 +6,16 @@ import 'package:src_core_bloc/widgets/custom_text.dart';
 class ProfileMenuItem extends StatelessWidget {
   final String? text;
   final IconData? icon;
-  final Function? press; 
+  final Function? press;
+  final bool isHideArrow;
 
   const ProfileMenuItem({
     Key? key,
     @required this.text,
     @required this.icon,
     this.press,
-  }): super(key: key);
+    this.isHideArrow = true
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +24,7 @@ class ProfileMenuItem extends StatelessWidget {
         horizontal: StyleOthersConst.kPaddingDefault,
         vertical: StyleOthersConst.kPaddingDefault / 2
       ),
-      child:TextButton(
+      child: TextButton(
         onPressed: () {},
         style: TextButton.styleFrom(
           primary: ColorConst.kPrimaryColor,
@@ -32,18 +34,25 @@ class ProfileMenuItem extends StatelessWidget {
         ),
         child: Row(
           children: [
-            Icon(icon,),
-            const SizedBox(width: StyleOthersConst.kPaddingDefault,),
+            Icon(
+              icon,
+            ),
+            const SizedBox(
+              width: StyleOthersConst.kPaddingDefault,
+            ),
             Expanded(
               child: CustomText(
                 text: text,
                 align: TextAlign.left,
               ),
             ),
-            const Icon(
-              Icons.arrow_forward_ios, 
-              size: StyleOthersConst.kSize ,
-              color: ColorConst.kTextColor,
+            Visibility(
+              visible: isHideArrow,
+              child: const Icon(
+                Icons.arrow_forward_ios,
+                size: StyleOthersConst.kSize,
+                color: ColorConst.kTextColor,
+              ),
             )
           ],
         ),
