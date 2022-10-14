@@ -6,3 +6,5 @@ enum ToastState { success, info, error, warning }
 enum SnackType { success, fail, normal }
 
 enum CRUDType { CREATE, READ, UPDATE, DELETE }
+
+enum FlavorType { DEV, TEST, PROD }
