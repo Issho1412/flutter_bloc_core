@@ -7,9 +7,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-
-// ignore: import_of_legacy_library_into_null_safe
-import 'package:src_core_bloc/main.dart';
+import 'package:src_core_bloc/app.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {

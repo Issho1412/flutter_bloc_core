@@ -58,6 +58,25 @@ android {
             signingConfig signingConfigs.debug
         }
     }
+
+    flavorDimensions "codebaseapp"
+
+    productFlavors {
+        dev {
+            dimension "codebaseapp"
+            resValue "string", "app_name", "Evinote Dev"
+        }
+
+        QC {
+            dimension "codebaseapp"
+            resValue "string", "app_name", "Evinote Test"
+        }
+
+        prod {
+            dimension "codebaseapp"
+            resValue "string", "app_name", "Evinote Prod"
+        }
+    }
 }
 
 flutter {

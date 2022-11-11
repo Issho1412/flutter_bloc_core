@@ -18,8 +18,8 @@ void main() {
   BlocOverrides.runZoned(() {
     runApp( 
       FlavorConfig(
-        appName: 'CORE PROD', 
-        flavorName: FlavorType.PROD, 
+        appName: 'CORE TEST', 
+        flavorName: FlavorType.TEST, 
         child: const MyApp()
       )
     );
