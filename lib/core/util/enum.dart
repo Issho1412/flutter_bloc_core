@@ -8,3 +8,5 @@ enum SnackType { success, fail, normal }
 enum CRUDType { CREATE, READ, UPDATE, DELETE }
 
 enum FlavorType { DEV, TEST, PROD }
+
+enum LanguageType { EN, VN, JP }

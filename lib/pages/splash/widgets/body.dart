@@ -41,55 +41,57 @@ class _BodyState extends State<Body> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-        child: SizedBox(
-      width: double.infinity,
-      child: Column(
-        children: [
-          Text('${FlavorConfig.instance?.flavorName}'),
-          Expanded(
+      child: SizedBox(
+        width: double.infinity,
+        child: Column(
+          children: [
+            Expanded(
               flex: 3,
               child: PageView.builder(
-                  onPageChanged: (value) {
-                    _splashBloc.updatePageIndex(value);
-                  },
-                  itemCount: splashData.length,
-                  itemBuilder: (context, index) => SplashItem(
-                        image: splashData[index][sAttImage] ?? '',
-                        text: splashData[index][sAttText] ?? '',
-                      ))),
-          Expanded(
-            flex: 2,
-            child: Padding(
-              padding: EdgeInsets.symmetric(
-                  horizontal: getProportionateScreenWidth(
-                      StyleOthersConst.kPaddingDefault)),
-              child: Column(
-                children: [
-                  const Spacer(),
-                  BlocBuilder<SplashBloc, BaseState>(
-                    bloc: _splashBloc,
-                    builder: (context, state) {
-                      return Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: List.generate(splashData.length,
-                            (index) => buildDot(index: index)),
-                      );
-                    },
-                  ),
-                  const Spacer(),
-                  CustomButton(
-                      bgColor: ColorConst.kPrimaryColor,
-                      text: sBtnContinue,
-                      onTap: () {
-                        Helper().navigateTo(loginRoute);
-                      }),
-                  const Spacer()
-                ],
-              ),
+                onPageChanged: (value) {
+                  _splashBloc.updatePageIndex(value);
+                },
+                itemCount: splashData.length,
+                itemBuilder: (context, index) => SplashItem(
+                  image: splashData[index][sAttImage] ?? '',
+                  text: splashData[index][sAttText] ?? '',
+                )
+              )
             ),
-          )
-        ],
-      ),
-    ));
+            Expanded(
+              flex: 2,
+              child: Padding(
+                padding: EdgeInsets.symmetric(
+                    horizontal: getProportionateScreenWidth(
+                        StyleOthersConst.kPaddingDefault)),
+                child: Column(
+                  children: [
+                    const Spacer(),
+                    BlocBuilder<SplashBloc, BaseState>(
+                      bloc: _splashBloc,
+                      builder: (context, state) {
+                        return Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: List.generate(splashData.length,
+                              (index) => buildDot(index: index)),
+                        );
+                      },
+                    ),
+                    const Spacer(),
+                    CustomButton(
+                        bgColor: ColorConst.kPrimaryColor,
+                        text: sBtnContinue,
+                        onTap: () {
+                          Helper().navigateTo(loginRoute);
+                        }),
+                    const Spacer()
+                  ],
+                ),
+              ),
+            )
+          ],
+        ),
+      )
+    );
   }
 }

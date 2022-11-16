@@ -4,6 +4,8 @@ import '../../config/size_config.dart';
 
 // ------ Color List ------ //
 class StyleOthersConst {
+  StyleOthersConst._();
+  
   static const kBold = FontWeight.bold;
   static const kRadius = 20.0;
   static const kPaddingDefault = 20.0;
@@ -24,8 +26,7 @@ class StyleOthersConst {
   );
 
   static final otpInputDecoration = InputDecoration(
-    contentPadding:
-        EdgeInsets.symmetric(vertical: getProportionateScreenWidth(15)),
+    contentPadding: EdgeInsets.symmetric(vertical: getProportionateScreenWidth(15)),
     border: outlineInputBorder(),
     focusedBorder: outlineInputBorder(),
     enabledBorder: outlineInputBorder(),
