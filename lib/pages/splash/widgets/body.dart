@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:src_core_bloc/core/base/base_state.dart';
-import 'package:src_core_bloc/core/config/flavor_config.dart';
 import 'package:src_core_bloc/core/util/helper.dart';
 import 'package:src_core_bloc/core/util/style/colors.dart';
 import 'package:src_core_bloc/core/util/style/others.dart';

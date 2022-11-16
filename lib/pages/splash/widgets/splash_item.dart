@@ -31,7 +31,7 @@ class SplashItem extends StatelessWidget {
           imgUrl: image,
           height: getProportionateScreenHeight(265),
           width: getProportionateScreenWidth(235),
-        )
+        ),
       ],
     );
   }
