@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:src_core_bloc/core/base/base_source_device.dart';
 import 'package:src_core_bloc/core/util/asset_path.dart';
-import 'package:src_core_bloc/core/util/style/colors.dart';
+import 'package:src_core_bloc/core/config/colors.dart';
 
 class ProfilePic extends StatelessWidget {
   const ProfilePic({
@@ -33,10 +33,10 @@ class ProfilePic extends StatelessWidget {
                 style: TextButton.styleFrom(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(50),
-                    side: const BorderSide(color: ColorConst.kTxtWhite),
+                    side: const BorderSide(color: AppColors.kTxtWhite),
                   ),
                   primary: Colors.white,
-                  backgroundColor: ColorConst.kColorSLight,
+                  backgroundColor: AppColors.kColorSLight,
                 ),
                 onPressed: () {
                   BaseSourceDevice.getImgFromCamera();

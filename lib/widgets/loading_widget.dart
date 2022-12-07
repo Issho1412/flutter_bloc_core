@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:src_core_bloc/core/util/style/colors.dart';
+import '../core/config/colors.dart';
 
 class LoadingWidget extends StatelessWidget {
   const LoadingWidget({
@@ -18,7 +18,7 @@ class LoadingWidget extends StatelessWidget {
       padding: padding ?? const EdgeInsets.all(0.0),
       child: Center(
         child: CircularProgressIndicator(
-          color: color ?? ColorConst.kPrimaryColor,
+          color: color ?? AppColors.kPrimaryColor,
           strokeWidth: strokeWidth ?? 10,
         ),
       ),

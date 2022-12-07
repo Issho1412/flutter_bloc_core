@@ -2,9 +2,9 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:src_core_bloc/core/base/base_state.dart';
+import 'package:src_core_bloc/core/config/colors.dart';
 import 'package:src_core_bloc/core/util/helper.dart';
-import 'package:src_core_bloc/core/util/style/colors.dart';
-import 'package:src_core_bloc/core/util/style/others.dart';
+import 'package:src_core_bloc/core/config/constants.dart';
 import 'package:src_core_bloc/features/home/home_bloc.dart';
 import 'package:src_core_bloc/features/home/home_event.dart';
 import 'package:src_core_bloc/routes.dart';
@@ -53,7 +53,7 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver, Single
             child: Scaffold(
               floatingActionButton: FloatingActionButton(
                 onPressed: (){ Helper().navigateTo(qrcodeRoute); },
-                backgroundColor: ColorConst.kPrimaryColor,
+                backgroundColor: AppColors.kPrimaryColor,
                 child: const Icon(Icons.qr_code_scanner_outlined,),
               ),
               floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
@@ -69,16 +69,16 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver, Single
               ),
               bottomNavigationBar: BottomAppBar(
                 shape: const CircularNotchedRectangle(),
-                notchMargin: StyleOthersConst.kMarginDefault / 2,
+                notchMargin: AppConstants.kMarginDefault / 2,
                 child: BottomNavigationBar(
-                  backgroundColor: ColorConst.kTransparent,
+                  backgroundColor: AppColors.kTransparent,
                   currentIndex: _homeBloc.currentTabIndex,
                   elevation: 0,
-                  iconSize: StyleOthersConst.kSize * 1.4,
+                  iconSize: AppConstants.kSize * 1.4,
                   onTap: (int mindex) {
                     _homeBloc.add(OnSetTabIndex(index: mindex));
                   },
-                  selectedItemColor: ColorConst.kPrimaryColor,
+                  selectedItemColor: AppColors.kPrimaryColor,
                   type: BottomNavigationBarType.fixed,
                   items: const [
                     BottomNavigationBarItem(

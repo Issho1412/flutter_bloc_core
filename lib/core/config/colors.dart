@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 // ------ Color List ------ //
-class ColorConst {
-  ColorConst._();
+class AppColors {
+  AppColors._();
   static const kPrimaryColor = Color(0xFFFF7643); // Main color
   static const kPrimaryLightColor = Color(0xFFFFECDF);
   static const kPrimaryGradientColor = LinearGradient(

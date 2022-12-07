@@ -1,7 +1,7 @@
 // ignore: import_of_legacy_library_into_null_safe
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:src_core_bloc/core/util/style/others.dart';
+import 'package:src_core_bloc/core/config/constants.dart';
 
 class CustomImage extends StatelessWidget {
   final String imgUrl;
@@ -26,8 +26,8 @@ class CustomImage extends StatelessWidget {
       return CachedNetworkImage(
         placeholder: (context, url) => const CircularProgressIndicator(),
         imageUrl: imgUrl,
-        height: height ?? StyleOthersConst. kHeightDefault,
-        width: width ?? StyleOthersConst.kHeightDefault,
+        height: height ?? AppConstants. kHeightDefault,
+        width: width ?? AppConstants.kHeightDefault,
       );
     }
 

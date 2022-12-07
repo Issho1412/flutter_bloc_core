@@ -1,17 +1,23 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class NavigationService {
-  final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+  static final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+  static final GlobalKey<ScaffoldMessengerState> snackbarKey = GlobalKey<ScaffoldMessengerState>();
+  NavigatorState? get state => navigatorKey.currentState;
 
-  Future<dynamic> navigateTo(String routeName, {dynamic args}) {
+  static Future<dynamic> navigateTo(String routeName, {dynamic args}) {
     return navigatorKey.currentState!.pushNamed(routeName, arguments: args);
   }
 
-  Future<dynamic> navigateReplaceTo(String routeName, {dynamic args}) {
+  static Future<dynamic> navigateReplaceTo(String routeName, {dynamic args}) {
     return navigatorKey.currentState!.pushReplacementNamed(routeName, arguments: args);
   }
 
-  void goBack() {
+  static Future<dynamic> navigateReplaceUntil(String routeName, {dynamic args}) {
+    return navigatorKey.currentState!.pushNamedAndRemoveUntil(routeName, (Route<dynamic> route) => false ,arguments: args);
+  }
+
+  static void goBack() {
     return navigatorKey.currentState!.pop();
   }
 }

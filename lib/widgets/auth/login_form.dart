@@ -4,7 +4,7 @@ import 'package:src_core_bloc/core/base/base_state.dart';
 import 'package:src_core_bloc/core/const.dart';
 import 'package:src_core_bloc/core/util/asset_path.dart';
 import 'package:src_core_bloc/core/util/helper.dart';
-import 'package:src_core_bloc/core/util/style/colors.dart';
+import 'package:src_core_bloc/core/config/colors.dart';
 import 'package:src_core_bloc/features/auth/login_bloc.dart';
 import 'package:src_core_bloc/routes.dart';
 import 'package:src_core_bloc/widgets/auth/social_card_item.dart';
@@ -12,7 +12,7 @@ import 'package:src_core_bloc/widgets/custom_button.dart';
 import 'package:src_core_bloc/widgets/custom_input.dart';
 import 'package:src_core_bloc/widgets/custom_text.dart';
 import '../../core/config/size_config.dart';
-import '../../core/util/style/others.dart';
+import '../../core/config/constants.dart';
 import 'form_error.dart';
 
 class LoginForm extends StatefulWidget {
@@ -36,15 +36,15 @@ class _LoginFormState extends State<LoginForm> {
             children: [
               SizedBox(height: SizeConfig.screenHeight! * 0.04),
               CustomText(
-                color: ColorConst.kTxtDefault,
+                color: AppColors.kTxtDefault,
                 text: sWelcomeBack,
-                size: getProportionateScreenWidth(StyleOthersConst.kHeadSize - 8),
-                weight: StyleOthersConst.kBold,
+                size: getProportionateScreenWidth(AppConstants.kHeadSize - 8),
+                weight: AppConstants.kBold,
               ),
               const CustomText(
-                color: ColorConst.kTextColor,
+                color: AppColors.kTextColor,
                 text: sDeslogin,
-                size: StyleOthersConst.kSize - 1,
+                size: AppConstants.kSize - 1,
               ),
               SizedBox(height: SizeConfig.screenHeight! * 0.05),
               // Start Form WIDGET
@@ -59,7 +59,7 @@ class _LoginFormState extends State<LoginForm> {
                       placeHolder: sHintEmailInput,
                     ),
                     SizedBox(
-                      height: getProportionateScreenHeight(StyleOthersConst.kHeightDefault / 3),
+                      height: getProportionateScreenHeight(AppConstants.kHeightDefault / 3),
                     ),
                     CustomInput(
                       labelTxt: sPsw,
@@ -68,18 +68,18 @@ class _LoginFormState extends State<LoginForm> {
                       placeHolder: sHintPswInput,
                     ),
                     SizedBox(
-                      height: getProportionateScreenHeight(StyleOthersConst.kHeightDefault / 3),
+                      height: getProportionateScreenHeight(AppConstants.kHeightDefault / 3),
                     ),
                     Row(
                       children: [
                         Checkbox(
                           value: _loginBloc.isRemember,
-                          activeColor: ColorConst.kPrimaryColor,
+                          activeColor: AppColors.kPrimaryColor,
                           onChanged: _loginBloc.onChangeRemember
                         ),
                         const CustomText(
                           text: sBtnRememberme,
-                          size: StyleOthersConst.kSize,
+                          size: AppConstants.kSize,
                         ),
                         const Spacer(),
                         InkWell(
@@ -88,7 +88,7 @@ class _LoginFormState extends State<LoginForm> {
                           },
                           child: const CustomText(
                             text: sBtnForgotPassword,
-                            size: StyleOthersConst.kSize,
+                            size: AppConstants.kSize,
                             underline: TextDecoration.underline,
                           ),
                         ),
@@ -96,10 +96,10 @@ class _LoginFormState extends State<LoginForm> {
                     ),
                     FormError(errors: _loginBloc.errors),
                     SizedBox(
-                      height: getProportionateScreenHeight(StyleOthersConst.kHeightDefault / 2),
+                      height: getProportionateScreenHeight(AppConstants.kHeightDefault / 2),
                     ),
                     CustomButton(
-                        bgColor: ColorConst.kPrimaryColor,
+                        bgColor: AppColors.kPrimaryColor,
                         text: sBtnLogin,
                         onTap: () {
                           _loginBloc.login();
@@ -132,7 +132,7 @@ class _LoginFormState extends State<LoginForm> {
                 children: [
                   const CustomText(
                     text: sNotAccount,
-                    size: StyleOthersConst.kSize,
+                    size: AppConstants.kSize,
                   ),
                   InkWell(
                     onTap: () {
@@ -140,8 +140,8 @@ class _LoginFormState extends State<LoginForm> {
                     },
                     child: const CustomText(
                       text: sBtnRegister,
-                      weight: StyleOthersConst.kBold,
-                      color: ColorConst.kPrimaryColor,
+                      weight: AppConstants.kBold,
+                      color: AppColors.kPrimaryColor,
                     )
                   )
                 ],

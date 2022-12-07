@@ -7,10 +7,10 @@ import 'package:src_core_bloc/routes.dart';
 import 'package:src_core_bloc/widgets/custom_button.dart';
 import 'package:src_core_bloc/widgets/custom_input.dart';
 import 'package:src_core_bloc/widgets/custom_text.dart';
+import '../../core/config/colors.dart';
 import '../../core/config/size_config.dart';
 import '../../core/util/helper.dart';
-import '../../core/util/style/colors.dart';
-import '../../core/util/style/others.dart';
+import '../../core/config/constants.dart';
 import 'form_error.dart';
 
 class ForgotPasswordForm extends StatefulWidget {
@@ -28,14 +28,14 @@ class _ForgotPasswordFormState extends State<ForgotPasswordForm> {
       children: [
         SizedBox(height: SizeConfig.screenHeight! * 0.04),
         CustomText(
-          color: ColorConst.kTxtDefault,
+          color: AppColors.kTxtDefault,
           text: sBtnForgotPassword, 
-          size: getProportionateScreenWidth(StyleOthersConst.kHeadSize - 10),
-          weight: StyleOthersConst.kBold,
+          size: getProportionateScreenWidth(AppConstants.kHeadSize - 10),
+          weight: AppConstants.kBold,
         ),
         const CustomText(
           text: sClickLinkToReset,
-          size: StyleOthersConst.kSize - 2,
+          size: AppConstants.kSize - 2,
         ),            
         SizedBox(height: SizeConfig.screenHeight! * 0.08),
         Form(
@@ -48,11 +48,11 @@ class _ForgotPasswordFormState extends State<ForgotPasswordForm> {
                 controller: _bloc.emailEditingController, 
                 placeHolder: sHintEmailInput,
               ),
-              SizedBox(height: getProportionateScreenHeight(StyleOthersConst.kHeightDefault/2),),
+              SizedBox(height: getProportionateScreenHeight(AppConstants.kHeightDefault/2),),
               FormError(errors: _bloc.errors),
-              SizedBox(height: getProportionateScreenHeight(StyleOthersConst.kHeightDefault/2),),
+              SizedBox(height: getProportionateScreenHeight(AppConstants.kHeightDefault/2),),
               CustomButton(
-                bgColor: ColorConst.kPrimaryColor,
+                bgColor: AppColors.kPrimaryColor,
                 text: sBtnContinue, onTap: (){
                   Helper().navigateTo(otpRoute);
                 }

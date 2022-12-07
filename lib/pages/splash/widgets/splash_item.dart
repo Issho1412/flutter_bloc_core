@@ -3,8 +3,8 @@ import 'package:src_core_bloc/data/demo_data.dart';
 import 'package:src_core_bloc/widgets/custom_image.dart';
 import 'package:src_core_bloc/widgets/custom_text.dart';
 import '../../../core/config/size_config.dart';
-import '../../../core/util/style/colors.dart';
-import '../../../core/util/style/others.dart';
+import 'package:src_core_bloc/core/config/colors.dart';
+import '../../../core/config/constants.dart';
 
 class SplashItem extends StatelessWidget {
   const SplashItem({
@@ -21,9 +21,9 @@ class SplashItem extends StatelessWidget {
         const Spacer(),
         CustomText(
           text: sAppName,
-          color: ColorConst.kPrimaryColor,
-          size: getProportionateScreenHeight(StyleOthersConst.kHeadSize),
-          weight: StyleOthersConst.kBold,
+          color: AppColors.kPrimaryColor,
+          size: getProportionateScreenHeight(AppConstants.kHeadSize),
+          weight: AppConstants.kBold,
         ),
         CustomText(text: text,),
         const Spacer(flex: 2),

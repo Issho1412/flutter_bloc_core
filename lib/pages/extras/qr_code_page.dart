@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 import 'package:src_core_bloc/core/base/base_state.dart';
 import 'package:src_core_bloc/core/const.dart';
-import 'package:src_core_bloc/core/util/style/colors.dart';
 import 'package:src_core_bloc/features/extras/qr_code/qr_code_bloc.dart';
 import 'package:src_core_bloc/widgets/custom_button.dart';
+
+import '../../core/config/colors.dart';
 
 class QRCodePage extends StatefulWidget {
   const QRCodePage({Key? key}) : super(key: key);
@@ -63,11 +64,11 @@ class _QRCodePageState extends State<QRCodePage> {
                     ),
                   ),
                   Container(
-                    color: ColorConst.kPrimaryColor,
+                    color: AppColors.kPrimaryColor,
                     child: Row(
                       children: [
                         CustomButton(
-                          bgColor: ColorConst.kPrimaryColor,
+                          bgColor: AppColors.kPrimaryColor,
                           text: sBtnSave, onTap: _qrCodeBloc.catchImage
                         ),
                       ],

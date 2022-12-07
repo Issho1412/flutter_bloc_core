@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:src_core_bloc/widgets/custom_text.dart';
-import '../core/util/style/colors.dart';
+import 'package:src_core_bloc/core/config/colors.dart';
+
 
 class CustomButton extends StatelessWidget {
   final String? text;
@@ -38,18 +39,18 @@ class CustomButton extends StatelessWidget {
           ? MediaQuery.of(context).size.width * width!
           : MediaQuery.of(context).size.width,
           decoration: BoxDecoration(
-            border: Border.all(color: borderColor ?? ColorConst.kPrimaryColor),
+            border: Border.all(color: borderColor ?? AppColors.kPrimaryColor),
             borderRadius: BorderRadius.circular(
               radius != null ? 0 : 20
             ),
-            color: bgColor ?? ColorConst.kTxtDefault,
+            color: bgColor ?? AppColors.kTxtDefault,
           ),
           child: Container(
             margin: const EdgeInsets.all(12),
             alignment: Alignment.center,
             child: CustomText(
               text: text,
-              color: txtColor ?? ColorConst.kTxtWhite,
+              color: txtColor ?? AppColors.kTxtWhite,
               size: 18,
               weight: FontWeight.w700,
             ),

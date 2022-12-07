@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:src_core_bloc/core/util/style/colors.dart';
+import 'package:src_core_bloc/core/config/colors.dart';
 
 class NoDataWidget extends StatelessWidget {
   const NoDataWidget({Key? key, this.text = 'No data'}) : super(key: key);
@@ -11,11 +11,11 @@ class NoDataWidget extends StatelessWidget {
         Expanded(
           child: Container(
             padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 15),
-            color: ColorConst.kTextColor.withOpacity(0.1),
+            color: AppColors.kTextColor.withOpacity(0.1),
             child: Center(
                 child: Text(
               text,
-              style: const TextStyle(color: ColorConst.kTxtDefault)
+              style: const TextStyle(color: AppColors.kTxtDefault)
             )),
           ),
         ),

@@ -4,9 +4,9 @@ import 'package:src_core_bloc/data/demo_data.dart';
 import 'package:src_core_bloc/features/auth/otp_bloc.dart';
 import 'package:src_core_bloc/widgets/custom_button.dart';
 import 'package:src_core_bloc/widgets/custom_text.dart';
+import '../../core/config/colors.dart';
 import '../../core/config/size_config.dart';
-import '../../core/util/style/colors.dart';
-import '../../core/util/style/others.dart';
+import '../../core/config/constants.dart';
 
 class OTPForm extends StatefulWidget {
   const OTPForm({Key? key}) : super(key: key);
@@ -34,14 +34,14 @@ class _OTPFormState extends State<OTPForm> {
       children: [
         SizedBox(height: SizeConfig.screenHeight! * 0.04),
         CustomText(
-          color: ColorConst.kTxtDefault,
+          color: AppColors.kTxtDefault,
           text: sOtp,
-          size: getProportionateScreenWidth(StyleOthersConst.kHeadSize - 10),
-          weight: StyleOthersConst.kBold,
+          size: getProportionateScreenWidth(AppConstants.kHeadSize - 10),
+          weight: AppConstants.kBold,
         ),
         const CustomText(
           text: sOtpDes,
-          size: StyleOthersConst.kSize - 2,
+          size: AppConstants.kSize - 2,
         ),
         SizedBox(height: SizeConfig.screenHeight! * 0.08),
         Row(
@@ -57,7 +57,7 @@ class _OTPFormState extends State<OTPForm> {
                   duration: const Duration(seconds: 30),
                   builder: (_, dynamic value, child) => Text(
                     "00:${value.toInt()}",
-                    style: const TextStyle(color: ColorConst.kPrimaryColor),
+                    style: const TextStyle(color: AppColors.kPrimaryColor),
                   ),
                 ),
               ],
@@ -70,7 +70,7 @@ class _OTPFormState extends State<OTPForm> {
           child: Column(
             children: [
               SizedBox(
-                height: getProportionateScreenHeight(StyleOthersConst.kHeightDefault / 2),
+                height: getProportionateScreenHeight(AppConstants.kHeightDefault / 2),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -80,10 +80,10 @@ class _OTPFormState extends State<OTPForm> {
                     child: TextFormField(
                       autofocus: true,
                       obscureText: true,
-                      style: const TextStyle(fontSize: StyleOthersConst.kSize * 1.7),
+                      style: const TextStyle(fontSize: AppConstants.kSize * 1.7),
                       keyboardType: TextInputType.number,
                       textAlign: TextAlign.center,
-                      decoration: StyleOthersConst.otpInputDecoration,
+                      decoration: AppConstants.otpInputDecoration,
                       onChanged: (value) {
                         nextField(value, _otpBloc.pin2FocusNode);
                       },
@@ -94,10 +94,10 @@ class _OTPFormState extends State<OTPForm> {
                     child: TextFormField(
                       focusNode: _otpBloc.pin2FocusNode,
                       obscureText: true,
-                      style: const TextStyle(fontSize: StyleOthersConst.kSize * 1.7),
+                      style: const TextStyle(fontSize: AppConstants.kSize * 1.7),
                       keyboardType: TextInputType.number,
                       textAlign: TextAlign.center,
-                      decoration: StyleOthersConst.otpInputDecoration,
+                      decoration: AppConstants.otpInputDecoration,
                       onChanged: (value) => nextField(value, _otpBloc.pin3FocusNode),
                     ),
                   ),
@@ -106,10 +106,10 @@ class _OTPFormState extends State<OTPForm> {
                     child: TextFormField(
                       focusNode: _otpBloc.pin3FocusNode,
                       obscureText: true,
-                      style: const TextStyle(fontSize: StyleOthersConst.kSize * 1.7),
+                      style: const TextStyle(fontSize: AppConstants.kSize * 1.7),
                       keyboardType: TextInputType.number,
                       textAlign: TextAlign.center,
-                      decoration: StyleOthersConst.otpInputDecoration,
+                      decoration: AppConstants.otpInputDecoration,
                       onChanged: (value) => nextField(value, _otpBloc.pin4FocusNode),
                     ),
                   ),
@@ -118,10 +118,10 @@ class _OTPFormState extends State<OTPForm> {
                     child: TextFormField(
                       focusNode: _otpBloc.pin4FocusNode,
                       obscureText: true,
-                      style: const TextStyle(fontSize: StyleOthersConst.kSize * 1.7),
+                      style: const TextStyle(fontSize: AppConstants.kSize * 1.7),
                       keyboardType: TextInputType.number,
                       textAlign: TextAlign.center,
-                      decoration: StyleOthersConst.otpInputDecoration,
+                      decoration: AppConstants.otpInputDecoration,
                       onChanged: (value) {
                         if (value.length == 1) {
                           _otpBloc.pin4FocusNode.unfocus();
@@ -133,11 +133,11 @@ class _OTPFormState extends State<OTPForm> {
                 ],
               ),
               SizedBox(
-                height: getProportionateScreenHeight(StyleOthersConst.kHeightDefault / 2),
+                height: getProportionateScreenHeight(AppConstants.kHeightDefault / 2),
               ),
               CustomButton(
                 text: sBtnContinue,
-                bgColor: ColorConst.kPrimaryColor,
+                bgColor: AppColors.kPrimaryColor,
                 onTap: () {},
               ),
             ],
@@ -150,7 +150,7 @@ class _OTPFormState extends State<OTPForm> {
           child: const CustomText(
             text: sResendOtp,
             underline: TextDecoration.underline,
-            size: StyleOthersConst.kSize - 1,
+            size: AppConstants.kSize - 1,
           ),
         )
       ],

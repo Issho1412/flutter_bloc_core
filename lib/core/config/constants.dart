@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:src_core_bloc/core/util/style/colors.dart';
-import '../../config/size_config.dart';
+import 'colors.dart';
+import 'size_config.dart';
 
 // ------ Color List ------ //
-class StyleOthersConst {
-  StyleOthersConst._();
+class AppConstants {
+  AppConstants._();
   
   static const kBold = FontWeight.bold;
   static const kRadius = 20.0;
@@ -36,7 +36,7 @@ class StyleOthersConst {
 OutlineInputBorder outlineInputBorder() {
   return OutlineInputBorder(
     borderRadius: BorderRadius.circular(getProportionateScreenWidth(15)),
-    borderSide: const BorderSide(color: ColorConst.kTextColor),
+    borderSide: const BorderSide(color: AppColors.kTextColor),
   );
 }
 

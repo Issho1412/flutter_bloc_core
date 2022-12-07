@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:src_core_bloc/core/base/base_state.dart';
-import 'package:src_core_bloc/core/util/style/colors.dart';
 import 'package:src_core_bloc/features/meme/bloc/meme_bloc.dart';
 import 'package:src_core_bloc/widgets/custom_text.dart';
 import 'package:src_core_bloc/widgets/meme/meme_item.dart';
 
-import '../../core/util/style/others.dart';
+import '../../core/config/colors.dart';
+import '../../core/config/constants.dart';
 
 class MemePage extends StatefulWidget {
   const MemePage({Key? key}) : super(key: key);
@@ -25,17 +25,17 @@ class _MemesPageState extends State<MemePage> {
       builder: (context, state) {
         return Scaffold(
           body: Container(
-            padding: const EdgeInsets.all(StyleOthersConst.kPaddingDefault),
+            padding: const EdgeInsets.all(AppConstants.kPaddingDefault),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 const CustomText(
                   text: 'Welcome',
-                  weight: StyleOthersConst.kBold,
-                  color: ColorConst.kTxtDefault,
-                  size: StyleOthersConst.kSize + 4,
+                  weight: AppConstants.kBold,
+                  color: AppColors.kTxtDefault,
+                  size: AppConstants.kSize + 4,
                 ),
-            const SizedBox(height: StyleOthersConst.kHeightDefault /2,),
+            const SizedBox(height: AppConstants.kHeightDefault /2,),
             Expanded(
               child: RefreshIndicator(
                 onRefresh: () async{

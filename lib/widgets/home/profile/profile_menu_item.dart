@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:src_core_bloc/core/util/style/colors.dart';
-import 'package:src_core_bloc/core/util/style/others.dart';
+import 'package:src_core_bloc/core/config/colors.dart';
+import 'package:src_core_bloc/core/config/constants.dart';
 import 'package:src_core_bloc/widgets/custom_text.dart';
 
 class ProfileMenuItem extends StatelessWidget {
@@ -21,16 +21,16 @@ class ProfileMenuItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(
-        horizontal: StyleOthersConst.kPaddingDefault,
-        vertical: StyleOthersConst.kPaddingDefault / 2
+        horizontal: AppConstants.kPaddingDefault,
+        vertical: AppConstants.kPaddingDefault / 2
       ),
       child: TextButton(
         onPressed: () {},
         style: TextButton.styleFrom(
-          primary: ColorConst.kPrimaryColor,
-          padding: const EdgeInsets.all(StyleOthersConst.kPaddingDefault),
+          primary: AppColors.kPrimaryColor,
+          padding: const EdgeInsets.all(AppConstants.kPaddingDefault),
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-          backgroundColor: ColorConst.kColorSLight,
+          backgroundColor: AppColors.kColorSLight,
         ),
         child: Row(
           children: [
@@ -38,7 +38,7 @@ class ProfileMenuItem extends StatelessWidget {
               icon,
             ),
             const SizedBox(
-              width: StyleOthersConst.kPaddingDefault,
+              width: AppConstants.kPaddingDefault,
             ),
             Expanded(
               child: CustomText(
@@ -50,8 +50,8 @@ class ProfileMenuItem extends StatelessWidget {
               visible: isHideArrow,
               child: const Icon(
                 Icons.arrow_forward_ios,
-                size: StyleOthersConst.kSize,
-                color: ColorConst.kTextColor,
+                size: AppConstants.kSize,
+                color: AppColors.kTextColor,
               ),
             )
           ],

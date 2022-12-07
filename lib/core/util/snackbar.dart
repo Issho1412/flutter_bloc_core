@@ -1,26 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:src_core_bloc/core/util/style/colors.dart';
+import 'package:src_core_bloc/core/config/colors.dart';
+import 'package:src_core_bloc/core/routes/navigate_service.dart';
 import 'package:src_core_bloc/core/util/enum.dart';
-import 'package:src_core_bloc/core/util/globals.dart';
-import 'package:src_core_bloc/core/util/style/others.dart';
+import 'package:src_core_bloc/core/config/constants.dart';
 
 void showSnackBar(String msg, [type = SnackType.success]) {
-  Color? textColor = ColorConst.kTextColor;
+  Color? textColor = AppColors.kTextColor;
   switch (type) {
     case SnackType.fail:
-      textColor = ColorConst.kTxtDanger;
+      textColor = AppColors.kTxtDanger;
       break;
     case SnackType.success:
-      textColor = ColorConst.kTxtSuccess;
+      textColor = AppColors.kTxtSuccess;
       break;
     default:
-      textColor = ColorConst.kTxtDefault;
+      textColor = AppColors.kTxtDefault;
   }
   final SnackBar snackBar = SnackBar(
-    backgroundColor: ColorConst.kTransparent,
+    backgroundColor: AppColors.kTransparent,
     elevation: 0,
     content: Container(
-      padding: const EdgeInsets.all(StyleOthersConst.kPaddingDefault),
+      padding: const EdgeInsets.all(AppConstants.kPaddingDefault),
       decoration: BoxDecoration(
         borderRadius: const BorderRadius.all(Radius.circular(20)),
         color: textColor
@@ -30,7 +30,7 @@ void showSnackBar(String msg, [type = SnackType.success]) {
           Text(
             msg,
             style: const TextStyle(
-              color: ColorConst.kTxtWhite ,
+              color: AppColors.kTxtWhite ,
               fontSize: 15, fontWeight: FontWeight.w400),
           ),
           // const Icon(Icons.done_outline)
@@ -38,6 +38,6 @@ void showSnackBar(String msg, [type = SnackType.success]) {
       ),
     )
   );
-  GlobalsKey.snackbarKey.currentState?.clearSnackBars();
-  GlobalsKey.snackbarKey.currentState?.showSnackBar(snackBar);
+  NavigationService.snackbarKey.currentState?.clearSnackBars();
+  NavigationService.snackbarKey.currentState?.showSnackBar(snackBar);
 }

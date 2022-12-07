@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'core/config/theme/basic_theme.dart';
-import 'core/routes/locator.dart';
 import 'core/routes/navigate_service.dart';
-import 'core/util/globals.dart';
 import 'routes.dart';
 
 class MyApp extends StatelessWidget {
@@ -14,8 +12,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: theme(),
-      scaffoldMessengerKey: GlobalsKey.snackbarKey,
-      navigatorKey: locator<NavigationService>().navigatorKey,
+      scaffoldMessengerKey: NavigationService.snackbarKey,
+      navigatorKey: NavigationService.navigatorKey,
       initialRoute: splashRoute,
       onGenerateRoute: RouteList.generateRoute,
     );
